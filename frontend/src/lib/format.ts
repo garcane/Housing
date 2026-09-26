@@ -22,3 +22,7 @@ export const ordinal = (n: number | null | undefined) => {
 export const shortName = (name: string) =>
   name.replace(" Development Corporation", " DC").replace("Hammersmith and Fulham", "Hammersmith & Fulham")
     .replace("Kensington and Chelsea", "Kensington & Chelsea").replace("Barking and Dagenham", "Barking & Dagenham");
+
+/** "2026-08-09" -> "9 August 2026" (dates are calendar dates, so format in UTC to avoid shifting a day) */
+export const longDate = (iso: string | null | undefined) =>
+  iso ? new Date(`${iso.slice(0, 10)}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }) : "–";

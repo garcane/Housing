@@ -31,7 +31,7 @@ export default function Figure({
     setBusy(true);
     try {
       const url = await toPng(ref.current, {
-        backgroundColor: "#ffffff",
+        backgroundColor: getComputedStyle(document.body).backgroundColor, // matches light or dark mode
         pixelRatio: 2,
         filter: (n) => !(n instanceof HTMLElement && n.dataset.noExport !== undefined),
       });

@@ -2,7 +2,7 @@
 
 import * as Plot from "@observablehq/plot";
 import { PlotBox, PLOT_STYLE } from "@/components/viz/usePlot";
-import { C, LAND_COLORS, OUTCOME_COLORS } from "@/components/viz/colors";
+import { V, LAND_COLORS, OUTCOME_COLORS } from "@/components/viz/colors";
 import { pct, shortName } from "@/lib/format";
 
 const OUTCOMES = ["Approved", "Rejected", "Withdrawn", "Undecided"] as const;
@@ -30,7 +30,7 @@ export function OutcomeShareBar({ name, borough, london }: {
           Plot.barX(rows, Plot.stackX({ x: "share", y: "who", fill: "outcome", order: [...OUTCOMES], inset: 1, rx: 3,
             title: (d: Share) => `${d.who}\n${d.outcome}: ${pct(d.share, 1)} (${d.n.toLocaleString("en-GB")})` })),
           // label only segments wide enough to hold the text
-          Plot.text(rows.filter((d) => d.share * (width - Math.min(150, width * 0.3)) > 40), Plot.stackX({ x: "share", y: "who", z: "outcome", order: [...OUTCOMES], text: (d: Share) => pct(d.share), fill: "#fff", fontWeight: 500 })),
+          Plot.text(rows.filter((d) => d.share * (width - Math.min(150, width * 0.3)) > 40), Plot.stackX({ x: "share", y: "who", z: "outcome", order: [...OUTCOMES], text: (d: Share) => pct(d.share), fill: V.ring, fontWeight: 500 })),
           Plot.tip(rows, Plot.pointer(Plot.stackX({ x: "share", y: "who", z: "outcome", order: [...OUTCOMES],
             title: (d: Share) => `${d.who}\n${d.outcome}: ${pct(d.share, 1)} (${d.n.toLocaleString("en-GB")})` }))),
         ],
@@ -62,11 +62,11 @@ export function SizeCompare({ borough, london }: {
         y: { domain: sizes, label: null, tickSize: 0 },
         marks: [
           Plot.link(sizes.map((s) => ({ s, a: b.find((d) => d.size === s)?.approval_rate, l: london.find((d) => d.size === s)?.approval_rate }))
-            .filter((d) => d.a != null && d.l != null), { y1: "s", y2: "s", x1: "l", x2: "a", stroke: C.grid, strokeWidth: 3 }),
-          Plot.tickX(london, { y: "size", x: "approval_rate", stroke: C.london, strokeWidth: 2.5 }),
-          Plot.dot(b, { y: "size", x: "approval_rate", r: 6, fill: C.approved, stroke: "#fff", strokeWidth: 1.5 }),
+            .filter((d) => d.a != null && d.l != null), { y1: "s", y2: "s", x1: "l", x2: "a", stroke: V.grid, strokeWidth: 3 }),
+          Plot.tickX(london, { y: "size", x: "approval_rate", stroke: V.london, strokeWidth: 2.5 }),
+          Plot.dot(b, { y: "size", x: "approval_rate", r: 6, fill: V.approved, stroke: V.ring, strokeWidth: 1.5 }),
           // decision counts in a column right of the plot, clear of the marks
-          Plot.text(b, { y: "size", x: 1, text: (d: { n: number }) => `n = ${d.n.toLocaleString("en-GB")}`, dx: 10, textAnchor: "start", fill: C.ink2 }),
+          Plot.text(b, { y: "size", x: 1, text: (d: { n: number }) => `n = ${d.n.toLocaleString("en-GB")}`, dx: 10, textAnchor: "start", fill: V.ink2 }),
           Plot.tip(b, Plot.pointerY({ y: "size", x: "approval_rate", title: (d: { size: string; n: number; approval_rate: number }) =>
             `${d.size}: ${pct(d.approval_rate, 1)} (${d.n.toLocaleString("en-GB")} decided)\nLondon: ${pct(london.find((l) => l.size === d.size)?.approval_rate, 1)}` })),
         ],

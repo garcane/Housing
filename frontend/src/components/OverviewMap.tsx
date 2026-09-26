@@ -5,7 +5,8 @@ import { useMemo, useState } from "react";
 import LondonMap, { RampLegend } from "@/components/map/LondonMap";
 import ViewToggle, { extrusion } from "@/components/map/ViewToggle";
 import Figure from "@/components/viz/Figure";
-import { C, diverging, SEQ, sequential } from "@/components/viz/colors";
+import { C, divergingFor, SEQ, SEQ_DARK, sequentialFor, surfaceFor } from "@/components/viz/colors";
+import { useTheme } from "@/lib/theme";
 import type { AuthoritySummary } from "@/lib/api";
 import { num, ordinal, pct } from "@/lib/format";
 
@@ -26,6 +27,7 @@ export default function OverviewMap({ authorities, londonApproval, nRanked }: { 
   const router = useRouter();
   const [key, setKey] = useState<MetricKey>("approval_rate");
   const [threeD, setThreeD] = useState(false);
+  const dark = useTheme() === "dark";
   const metric = METRICS.find((m) => m.key === key)!;
   const bySlug = useMemo(() => Object.fromEntries(authorities.map((a) => [a.slug, a])), [authorities]);
 
@@ -37,11 +39,11 @@ export default function OverviewMap({ authorities, londonApproval, nRanked }: { 
     for (const a of authorities) {
       const v = a[key] as number | null;
       if (!a.code || v == null) continue;
-      f[a.slug] = key === "approval_rate" ? diverging(v, lo, londonApproval, hi) : sequential((v - lo) / (hi - lo || 1));
+      f[a.slug] = key === "approval_rate" ? divergingFor(dark)(v, lo, londonApproval, hi) : sequentialFor(dark)((v - lo) / (hi - lo || 1));
       h[a.slug] = extrusion(Math.min(Math.max(v, lo), hi), lo, hi);
     }
     return { fill: f, min: lo, max: hi, heights: h };
-  }, [authorities, key, londonApproval]);
+  }, [authorities, key, londonApproval, dark]);
 
   return (
     <Figure
@@ -82,9 +84,9 @@ export default function OverviewMap({ authorities, londonApproval, nRanked }: { 
         }}
       >
         {key === "approval_rate" ? (
-          <RampLegend stops={[C.rejected, C.midpoint, C.approved]} min={pct(min)} max={pct(max)} label={`Approval rate · midpoint = London ${pct(londonApproval)}`} />
+          <RampLegend stops={[C.rejected, surfaceFor(dark).midpoint, C.approved]} min={pct(min)} max={pct(max)} label={`Approval rate · midpoint = London ${pct(londonApproval)}`} />
         ) : (
-          <RampLegend stops={SEQ} min={metric.fmt(min)} max={metric.fmt(max)} label={metric.label} />
+          <RampLegend stops={dark ? SEQ_DARK : SEQ} min={metric.fmt(min)} max={metric.fmt(max)} label={metric.label} />
         )}
       </LondonMap>
     </Figure>

@@ -6,7 +6,8 @@ import { useMemo, useState } from "react";
 import LondonMap, { RampLegend } from "./LondonMap";
 import ViewToggle from "./ViewToggle";
 import Figure, { Key } from "@/components/viz/Figure";
-import { BROWNFIELD_COLORS, C, diverging, LAND_COLORS, OUTCOME_COLORS, rgba } from "@/components/viz/colors";
+import { BROWNFIELD_COLORS, C, divergingFor, LAND_COLORS, OUTCOME_COLORS, rgba, surfaceFor } from "@/components/viz/colors";
+import { useTheme } from "@/lib/theme";
 import type { BrownfieldSite, Scheme } from "@/lib/api";
 import { useApi } from "@/lib/useApi";
 import { num, pct } from "@/lib/format";
@@ -17,6 +18,7 @@ const TALLEST = { london: 6000, borough: 2500 };
 /** Housing schemes; dot area (2D) or tower height (3D) = dwellings. Without `slug`, all of London. */
 export function HomesMap({ slug }: { slug?: string }) {
   const [threeD, setThreeD] = useState(false);
+  const ringHex = surfaceFor(useTheme() === "dark").canvas;
   const { data } = useApi<Scheme[]>(slug ? `/api/points/schemes?slug=${slug}` : "/api/points/schemes");
 
   const layers = useMemo(() => {
@@ -45,12 +47,13 @@ export function HomesMap({ slug }: { slug?: string }) {
       radiusUnits: "meters",
       radiusMinPixels: slug ? 4 : 2,
       getFillColor: color,
-      getLineColor: [255, 255, 255, 255],
+      getLineColor: rgba(ringHex),
       lineWidthMinPixels: 1,
       stroked: true,
       pickable: true,
+      updateTriggers: { getLineColor: ringHex },
     })];
-  }, [data, threeD, slug]);
+  }, [data, threeD, slug, ringHex]);
 
   return (
     <Figure
@@ -87,6 +90,7 @@ type PointsResp = { outcomes: string[]; sizes: string[]; points: [number, number
 /** Brownfield register sites + optional Green Belt, OSM land use and application points. */
 export function LandMap({ slug }: { slug: string }) {
   const [threeD, setThreeD] = useState(false);
+  const ringHex = surfaceFor(useTheme() === "dark").canvas;
   const [show, setShow] = useState({ brownfield: true, greenBelt: true, landuse: false, apps: false });
   const { data: sites } = useApi<BrownfieldSite[]>(`/api/points/brownfield?slug=${slug}`);
   const { data: apps } = useApi<PointsResp>(show.apps ? `/api/points/applications?slug=${slug}` : null);
@@ -120,13 +124,14 @@ export function LandMap({ slug }: { slug: string }) {
         out.push(new ScatterplotLayer<BrownfieldSite>({
           id: "brownfield", data: sites, getPosition: (d) => [d.lng, d.lat],
           getRadius: (d) => Math.max(20, Math.sqrt((d.hectares * 1e4) / Math.PI)), radiusUnits: "meters", radiusMinPixels: 3,
-          getFillColor: color, getLineColor: [255, 255, 255, 255],
+          getFillColor: color, getLineColor: rgba(ringHex),
           stroked: true, lineWidthMinPixels: 1, pickable: true,
+          updateTriggers: { getLineColor: ringHex },
         }));
       }
     }
     return out;
-  }, [show.apps, show.brownfield, apps, sites, threeD]);
+  }, [show.apps, show.brownfield, apps, sites, threeD, ringHex]);
 
   const toggle = (k: keyof typeof show, label: string) => (
     <label className="chip" style={{ cursor: "pointer" }}>
@@ -186,11 +191,12 @@ type HexCell = { count: number; colorValue: number; position: [number, number] }
  */
 export function HexMap({ slug, londonApproval }: { slug?: string; londonApproval: number }) {
   const [threeD, setThreeD] = useState(false);
+  const dark = useTheme() === "dark";
   const { data } = useApi<PointsResp>(slug ? `/api/points/applications?slug=${slug}` : "/api/points/applications");
   const radius = slug ? 250 : 600;
   const lo = 0.5, hi = 1;
   // Diverging ramp centred on the London rate, stepped into bands for the hexagon colour scale.
-  const colorRange = useMemo(() => Array.from({ length: 9 }, (_, i) => rgba(diverging(lo + ((hi - lo) * (i + 0.5)) / 9, lo, londonApproval, hi), 235).slice(0, 3) as [number, number, number]), [londonApproval]);
+  const colorRange = useMemo(() => Array.from({ length: 9 }, (_, i) => rgba(divergingFor(dark)(lo + ((hi - lo) * (i + 0.5)) / 9, lo, londonApproval, hi), 235).slice(0, 3) as [number, number, number]), [londonApproval, dark]);
 
   const layers = useMemo(() => data ? [new HexagonLayer<Pt>({
     id: "app-hexes",
@@ -235,7 +241,7 @@ export function HexMap({ slug, londonApproval }: { slug?: string; londonApproval
           );
         }}
       >
-        <RampLegend stops={[C.rejected, C.midpoint, C.approved]} min={pct(lo)} max={pct(hi)} label={`Approval rate · midpoint = London ${pct(londonApproval)}`} />
+        <RampLegend stops={[C.rejected, surfaceFor(dark).midpoint, C.approved]} min={pct(lo)} max={pct(hi)} label={`Approval rate · midpoint = London ${pct(londonApproval)}`} />
       </LondonMap>
     </Figure>
   );

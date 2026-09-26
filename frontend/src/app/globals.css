@@ -45,10 +45,59 @@
   --s-xxl: 48px;
   --s-section: 96px;
 
+  /* Theme-dependent surfaces and chart roles (overridden in dark mode below) */
+  --on-primary: #ffffff;
+  --overlay-bg: rgba(255, 255, 255, .95);
+  --subnav-bg: rgba(255, 255, 255, .96);
+  --notice-bg: #fdf8ee;
+  --row-current: #eef4fc;
+  --skeleton-mid: #eef1f5;
+  --shadow: rgba(24, 29, 38, .12);
+  --viz-text: #41454d;
+  --viz-london: #9297a0;
+  --viz-dim: #c4c7cc;
+  --viz-censored: #f3f1ec;
+  color-scheme: light;
+
   --font: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   --max: 1280px;
   --gutter: 48px;
 }
+
+/* Dark theme: same structure, stepped for a dark canvas. Signature coral/forest cards keep their colour;
+   the near-black primary flips to near-white so the primary action still reads as the strongest element. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --primary: #eef0f3;
+  --primary-active: #d5d9df;
+  --on-primary: #11151c;
+  --ink: #f1f3f6;
+  --body: #c9ced6;
+  --muted: #9aa1ad;
+  --hairline: #2c323d;
+  --border-strong: #4b5361;
+  --canvas: #0f1319;
+  --surface-soft: #161b23;
+  --surface-strong: #1f2530;
+  --surface-dark: #1b212b;
+  --signature-cream: #2a251c;
+  --link: #6ea2f0;
+  --link-active: #9cc0f5;
+  --overlay-bg: rgba(22, 27, 35, .95);
+  --subnav-bg: rgba(15, 19, 25, .96);
+  --notice-bg: #262015;
+  --row-current: #182536;
+  --skeleton-mid: #1d232d;
+  --shadow: rgba(0, 0, 0, .45);
+  --approved: #3987e5;
+  --rejected: #e66767;
+  --viz-grid: #2a2f38;
+  --viz-text: #a9afba;
+  --viz-london: #7d8490;
+  --viz-dim: #4a515c;
+  --viz-censored: #1c2129;
+}
+:root[data-theme="dark"] .card-dark { border: 1px solid var(--hairline); }
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
@@ -109,7 +158,7 @@ button, input, select { font: inherit; }
   padding: 12px 20px; border-radius: var(--r-lg); border: 1px solid transparent; cursor: pointer; white-space: nowrap; }
 .btn-lg { padding: 16px 24px; }
 .btn-sm { font-size: 14px; padding: 8px 14px; border-radius: var(--r-sm); }
-.btn-primary { background: var(--primary); color: #fff; box-shadow: 0 1px 2px rgba(27, 97, 201, .12); }
+.btn-primary { background: var(--primary); color: var(--on-primary); box-shadow: 0 1px 2px rgba(27, 97, 201, .12); }
 .btn-primary:active { background: var(--primary-active); }
 .btn-primary:focus-visible, .btn-secondary:focus-visible { outline: 2px solid var(--info-border); outline-offset: 2px; }
 .btn-secondary { background: var(--canvas); color: var(--ink); border-color: var(--hairline); }
@@ -154,7 +203,7 @@ table.data th button { all: unset; cursor: pointer; }
 table.data td { padding: 12px; border-bottom: 1px solid var(--hairline); color: var(--body); vertical-align: top; }
 table.data tr:last-child td { border-bottom: 0; }
 table.data td.num, table.data th.num { text-align: right; font-variant-numeric: tabular-nums; }
-table.data tr.is-current td { background: #eef4fc; }
+table.data tr.is-current td { background: var(--row-current); }
 table.data a { color: var(--ink); font-weight: 500; }
 
 /* ---------- Forms ---------- */
@@ -165,7 +214,7 @@ table.data a { color: var(--ink); font-weight: 500; }
 .seg { display: inline-flex; border: 1px solid var(--hairline); border-radius: var(--r-sm); overflow: hidden; }
 .seg button { border: 0; background: var(--canvas); padding: 8px 14px; font-size: 14px; color: var(--body); cursor: pointer; }
 .seg button + button { border-left: 1px solid var(--hairline); }
-.seg button[aria-pressed="true"] { background: var(--primary); color: #fff; }
+.seg button[aria-pressed="true"] { background: var(--primary); color: var(--on-primary); }
 
 /* ---------- Charts & maps ---------- */
 .figure { background: var(--canvas); border: 1px solid var(--hairline); border-radius: var(--r-md); padding: var(--s-lg); position: relative; }
@@ -173,16 +222,17 @@ table.data a { color: var(--ink); font-weight: 500; }
 .figure-head h3 { font-size: 16px; font-weight: 500; color: var(--ink); margin: 0; }
 .figure-head p { margin: 4px 0 0; font-size: 13px; color: var(--muted); }
 .figure-note { margin-top: var(--s-sm); font-size: 12px; color: var(--muted); }
+.plot { --plot-background: var(--canvas); }
 .plot svg { overflow: visible; font-family: var(--font); }
 .plot figure { margin: 0; }
 .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--body); margin-bottom: var(--s-sm); }
 .legend span { display: inline-flex; align-items: center; gap: 6px; }
 .map { position: relative; width: 100%; height: 560px; border-radius: var(--r-md); overflow: hidden; background: var(--surface-soft); }
 .map-sm { height: 420px; }
-.map-overlay { position: absolute; z-index: 2; background: rgba(255, 255, 255, .95); border: 1px solid var(--hairline); border-radius: var(--r-md);
+.map-overlay { position: absolute; z-index: 2; background: var(--overlay-bg); color: var(--body); border: 1px solid var(--hairline); border-radius: var(--r-md);
   padding: 10px 12px; font-size: 13px; }
 .map-tooltip { position: absolute; pointer-events: none; z-index: 5; background: var(--canvas); border: 1px solid var(--hairline); border-radius: var(--r-sm);
-  padding: 8px 10px; font-size: 13px; color: var(--body); box-shadow: 0 4px 16px rgba(24, 29, 38, .12); max-width: 280px; }
+  padding: 8px 10px; font-size: 13px; color: var(--body); box-shadow: 0 4px 16px var(--shadow); max-width: 280px; }
 .map-tooltip b { color: var(--ink); font-weight: 500; }
 .ramp { height: 8px; border-radius: 4px; width: 200px; }
 .maplibregl-ctrl-attrib { font-size: 10px; }
@@ -194,15 +244,15 @@ table.data a { color: var(--ink); font-weight: 500; }
 /* ---------- Misc ---------- */
 .breadcrumbs { font-size: 14px; color: var(--muted); display: flex; gap: 8px; }
 .breadcrumbs a { color: var(--muted); }
-.notice { border-left: 3px solid var(--signature-mustard, #d9a441); background: #fdf8ee; padding: 12px 16px; border-radius: var(--r-sm); font-size: 14px; color: var(--body); }
-.skeleton { background: linear-gradient(90deg, var(--surface-soft), #eef1f5, var(--surface-soft)); border-radius: var(--r-md); min-height: 200px; }
+.notice { border-left: 3px solid var(--signature-mustard, #d9a441); background: var(--notice-bg); padding: 12px 16px; border-radius: var(--r-sm); font-size: 14px; color: var(--body); }
+.skeleton { background: linear-gradient(90deg, var(--surface-soft), var(--skeleton-mid), var(--surface-soft)); border-radius: var(--r-md); min-height: 200px; }
 .prose { max-width: 760px; font-size: 16px; line-height: 1.65; }
 .prose h2 { font-size: 24px; font-weight: 400; color: var(--ink); margin: var(--s-xxl) 0 var(--s-sm); }
 .prose h3 { font-size: 18px; font-weight: 500; color: var(--ink); margin: var(--s-lg) 0 var(--s-xs); }
 .prose code { background: var(--surface-soft); border: 1px solid var(--hairline); border-radius: 4px; padding: 1px 5px; font-size: 14px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .pill-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
-.subnav { position: sticky; top: 64px; z-index: 40; background: rgba(255, 255, 255, .96); border-bottom: 1px solid var(--hairline); }
+.subnav { position: sticky; top: 64px; z-index: 40; background: var(--subnav-bg); border-bottom: 1px solid var(--hairline); }
 .subnav .container { display: flex; gap: var(--s-lg); overflow-x: auto; height: 48px; align-items: center; }
 .subnav a { color: var(--muted); font-size: 14px; white-space: nowrap; }
 
@@ -227,3 +277,13 @@ table.data a { color: var(--ink); font-weight: 500; }
   .map { height: 420px; }
   .stat-value { font-size: 32px; }
 }
+
+/* ---------- Theme toggle ---------- */
+.theme-toggle { width: 36px; height: 36px; border-radius: var(--r-full); border: 1px solid var(--hairline); background: var(--canvas);
+  color: var(--ink); display: inline-grid; place-items: center; cursor: pointer; flex: none; }
+.theme-toggle:focus-visible { outline: 2px solid var(--info-border); outline-offset: 2px; }
+.maplibregl-ctrl-group { background: var(--canvas) !important; }
+:root[data-theme="dark"] .maplibregl-ctrl-group button .maplibregl-ctrl-icon { filter: invert(1); }
+:root[data-theme="dark"] .maplibregl-ctrl-attrib { background: rgba(15, 19, 25, .7) !important; color: var(--muted); }
+:root[data-theme="dark"] .maplibregl-ctrl-attrib a { color: var(--muted); }
+.updated { font-size: 13px; color: var(--muted); }

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { type London } from "@/lib/api";
 import { serverApi } from "@/lib/server-api";
-import { num, pct } from "@/lib/format";
+import { longDate, num, pct } from "@/lib/format";
 
 export const metadata: Metadata = { title: "Methodology" };
 
@@ -20,7 +20,8 @@ export default async function Methodology() {
 
           <h2>Data</h2>
           <ul>
-            <li><b>Planning applications:</b> {num(l.counts.all_rows)} applications across London&apos;s planning authorities, started {l.period.start_min} to {l.period.start_max}, with decisions up to {l.period.decided_max}.</li>
+            <li><b>Planning applications:</b> {num(l.counts.all_rows)} applications across London&apos;s planning authorities, started {l.period.start_min} to {l.period.start_max}, with decisions up to {l.period.decided_max}.
+              {l.data_updated && <> Records were last fetched from the councils on {longDate(l.data_updated)}{l.built_at && <>, and this site&apos;s figures were rebuilt on {longDate(l.built_at)}</>}.</>}</li>
             <li><b>Boundaries:</b> ONS Local Authority Districts (December 2023, generalised clipped), London codes E09.</li>
             <li><b>Population:</b> ONS mid-year estimates, {l.land.pop_year}.</li>
             <li><b>Brownfield Land Register:</b> current entries (no end date) with a point location and site area.</li>

@@ -5,6 +5,8 @@
   "start_max": "2025-12-31",
   "decided_max": "2026-07-31"
  },
+ "data_updated": "2026-08-09",
+ "built_at": "2026-09-26",
  "counts": {
   "all_rows": 181929,
   "full": 98310,

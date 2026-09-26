@@ -3,7 +3,8 @@
 import { useMemo } from "react";
 import PlotlyChart from "./PlotlyChart";
 import Figure from "@/components/viz/Figure";
-import { C } from "@/components/viz/colors";
+import { C, surfaceFor } from "@/components/viz/colors";
+import { useTheme } from "@/lib/theme";
 import { useApi } from "@/lib/useApi";
 import { pct } from "@/lib/format";
 
@@ -12,6 +13,7 @@ type Row = { key: string; n: number; approval_rate: number; median_days: number 
 /** Wards within a borough: median decision time vs approval rate (Plotly, zoomable). */
 export default function WardScatter({ slug, boroughApproval, boroughDays }: { slug: string; boroughApproval: number; boroughDays: number | null }) {
   const { data, error } = useApi<{ ward: Row[] }>(`/api/authorities/${slug}/breakdowns`);
+  const ring = surfaceFor(useTheme() === "dark").canvas;
   const wards = useMemo(() => (data?.ward ?? []).filter((w) => w.median_days != null), [data]);
 
   const traces = useMemo(() => [{
@@ -21,10 +23,10 @@ export default function WardScatter({ slug, boroughApproval, boroughDays }: { sl
     y: wards.map((w) => w.approval_rate),
     text: wards.map((w) => w.key),
     customdata: wards.map((w) => w.n),
-    marker: { size: wards.map((w) => Math.max(8, Math.sqrt(w.n) * 1.6)), color: C.approved, opacity: 0.8, line: { color: "#fff", width: 1.5 } },
+    marker: { size: wards.map((w) => Math.max(8, Math.sqrt(w.n) * 1.6)), color: C.approved, opacity: 0.8, line: { color: ring, width: 1.5 } },
     hovertemplate: "<b>%{text}</b><br>Approval %{y:.1%}<br>Median %{x} days<br>%{customdata:,} decided<extra></extra>",
     name: "Wards",
-  }], [wards]);
+  }], [wards, ring]);
 
   const layout = useMemo(() => ({
     showlegend: false,

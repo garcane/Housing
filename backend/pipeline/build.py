@@ -333,6 +333,9 @@ def main():
         "scope": "32 London boroughs (City of London and the two development corporations are reported separately)",
         "period": {"start_min": str(full["start_date"].min().date()), "start_max": str(full["start_date"].max().date()),
                    "decided_max": str(full["decided_date"].max().date())},
+        # when the application records were last fetched from the councils, and when this pipeline ran
+        "data_updated": str(pd.to_datetime(data["fetched_at"], utc=True, format="ISO8601").max().date()),
+        "built_at": str(pd.Timestamp.now(tz="Europe/London").date()),
         "counts": {"all_rows": len(data), "full": len(bfull), "decided": len(bdec),
                    "withdrawn": int((bfull["outcome"] == "Withdrawn").sum()),
                    "undecided": int((bfull["outcome"] == "Undecided").sum())},

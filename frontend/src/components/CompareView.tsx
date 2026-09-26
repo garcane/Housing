@@ -7,7 +7,8 @@ import { useEffect, useMemo, useState } from "react";
 import PlotlyChart from "@/components/charts/PlotlyChart";
 import Figure, { Key } from "@/components/viz/Figure";
 import { PlotBox, PLOT_STYLE } from "@/components/viz/usePlot";
-import { C, SERIES } from "@/components/viz/colors";
+import { SERIES, surfaceFor, V } from "@/components/viz/colors";
+import { useTheme } from "@/lib/theme";
 import { api, type Authority, type AuthoritySummary, type London, type TrendRow } from "@/lib/api";
 import { days, ha, num, pct, shortName } from "@/lib/format";
 
@@ -45,6 +46,7 @@ export default function CompareView({ authorities, slots, details, london }: {
 }) {
   const router = useRouter();
   const path = usePathname();
+  const surface = surfaceFor(useTheme() === "dark");
   const chosen = slots.map((s, i) => ({ slot: i, slug: s, a: details[i] })).filter((x): x is { slot: number; slug: string; a: Authority } => !!x.a);
   const setSlots = (next: string[]) => router.replace(`${path}?b=${next.join(",").replace(/,+$/, "")}`, { scroll: false });
   const free = slots.findIndex((s) => !s);
@@ -65,20 +67,20 @@ export default function CompareView({ authorities, slots, details, london }: {
     return {
       type: "scatter" as const, mode: "lines+markers" as const, name: shortName(c.a.name),
       x: rows.map((r) => r.quarter), y: rows.map((r) => r[field]),
-      line: { color: SERIES[c.slot], width: 2 }, marker: { size: 6, color: SERIES[c.slot], line: { color: "#fff", width: 1 } },
+      line: { color: SERIES[c.slot], width: 2 }, marker: { size: 6, color: SERIES[c.slot], line: { color: surface.canvas, width: 1 } },
       hovertemplate: `<b>${c.a.name}</b><br>%{x}: %{y${field === "approval_rate" ? ":.1%" : ""}}<extra></extra>`,
     };
   });
-  const approvalTraces = useMemo(() => trendTraces("approval_rate"), [trends, key]); // eslint-disable-line react-hooks/exhaustive-deps
-  const dayTraces = useMemo(() => trendTraces("median_days"), [trends, key]); // eslint-disable-line react-hooks/exhaustive-deps
+  const approvalTraces = useMemo(() => trendTraces("approval_rate"), [trends, key, surface.canvas]); // eslint-disable-line react-hooks/exhaustive-deps
+  const dayTraces = useMemo(() => trendTraces("median_days"), [trends, key, surface.canvas]); // eslint-disable-line react-hooks/exhaustive-deps
   const censoredLayout = (fmt?: string) => ({
     yaxis: { tickformat: fmt },
     xaxis: { type: "category" as const },
-    shapes: [{ type: "rect" as const, xref: "x" as const, yref: "paper" as const, x0: "2025Q1", x1: "2025Q4", y0: 0, y1: 1, fillcolor: C.censored, line: { width: 0 }, layer: "below" as const }],
+    shapes: [{ type: "rect" as const, xref: "x" as const, yref: "paper" as const, x0: "2025Q1", x1: "2025Q4", y0: 0, y1: 1, fillcolor: surface.censored, line: { width: 0 }, layer: "below" as const }],
     showlegend: false, // the figure legend above the chart already names each series
   });
-  const approvalLayout = useMemo(() => censoredLayout(".0%"), []);
-  const daysLayout = useMemo(() => censoredLayout(), []);
+  const approvalLayout = useMemo(() => censoredLayout(".0%"), [surface.censored]); // eslint-disable-line react-hooks/exhaustive-deps
+  const daysLayout = useMemo(() => censoredLayout(), [surface.censored]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const legend = chosen.map((c) => <Key key={c.slug} color={SERIES[c.slot]} label={shortName(c.a.name)} />);
 
@@ -183,9 +185,9 @@ function MetricBars({ metric, chosen, london }: { metric: Metric; chosen: { slot
         y: { domain: rows.map((r) => r.name), label: null, tickSize: 0 },
         marks: [
           Plot.barX(rows, { y: "name", x: "v", fill: (d: { color: string }) => d.color, rx: 4, insetTop: 6, insetBottom: 6 }),
-          Plot.text(rows, { y: "name", x: "v", text: (d: { v: number }) => metric.fmt(d.v), dx: 6, textAnchor: "start", fill: C.ink }),
-          ...(london != null ? [Plot.ruleX([london], { stroke: C.ink2, strokeWidth: 1.5 })] : []),
-          Plot.ruleX([0], { stroke: C.grid }),
+          Plot.text(rows, { y: "name", x: "v", text: (d: { v: number }) => metric.fmt(d.v), dx: 6, textAnchor: "start", fill: V.ink }),
+          ...(london != null ? [Plot.ruleX([london], { stroke: V.ink2, strokeWidth: 1.5 })] : []),
+          Plot.ruleX([0], { stroke: V.grid }),
         ],
       })}
     />

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const LINKS = [
   { href: "/", label: "Overview" },
@@ -33,6 +34,7 @@ export default function TopNav() {
             </Link>
           ))}
         </nav>
+        <ThemeToggle />
         <Link href="/compare" className="btn btn-primary btn-sm nav-cta">Compare boroughs</Link>
         <button className="nav-toggle" aria-label="Menu" aria-expanded={open} onClick={() => setOpen((o) => !o)}>
           <svg width="18" height="18" viewBox="0 0 18 18" stroke="currentColor" strokeWidth="1.6"><path d="M2 5h14M2 9h14M2 13h14" /></svg>

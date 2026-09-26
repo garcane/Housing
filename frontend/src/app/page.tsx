@@ -7,7 +7,7 @@ import RankingTable from "@/components/RankingTable";
 import Figure from "@/components/viz/Figure";
 import { type AuthoritySummary, type London } from "@/lib/api";
 import { serverApi } from "@/lib/server-api";
-import { num, pct, shortName } from "@/lib/format";
+import { longDate, num, pct, shortName } from "@/lib/format";
 
 export default async function Home() {
   const [london, { authorities, n_ranked }] = await Promise.all([
@@ -39,6 +39,11 @@ export default async function Home() {
             <Stat value={pct(london.in_time)} label="Decided within the statutory period" sub="Not counting agreed extensions" />
             <Stat value={num(london.dwellings.approved)} label="Dwellings approved" sub={`across ${num(london.dwellings.schemes)} larger housing schemes`} />
           </div>
+          {london.data_updated && (
+            <p className="updated" style={{ marginBottom: 0 }}>
+              Data last updated {longDate(london.data_updated)} · decisions up to {longDate(london.period.decided_max)}
+            </p>
+          )}
         </div>
       </section>
 

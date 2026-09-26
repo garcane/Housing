@@ -41,7 +41,7 @@ export function PlotBox({
 export const PLOT_STYLE = {
   fontFamily: "var(--font-inter), system-ui, sans-serif",
   fontSize: "12px",
-  color: "#41454d",
+  color: "var(--viz-text)",
   background: "transparent",
   overflow: "visible",
 };

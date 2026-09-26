@@ -3,7 +3,7 @@
 import * as Plot from "@observablehq/plot";
 import { useRouter } from "next/navigation";
 import { PlotBox, PLOT_STYLE } from "@/components/viz/usePlot";
-import { C } from "@/components/viz/colors";
+import { V } from "@/components/viz/colors";
 import { pct, shortName } from "@/lib/format";
 
 type Row = { slug: string; name: string; approval_rate: number; median_days: number | null; decided: number };
@@ -27,15 +27,15 @@ export default function SpeedScatter({ rows, london, highlight }: { rows: Row[];
           x: { label: "Median days to decision →", grid: true },
           y: { label: "↑ Approval rate", tickFormat: (d: number) => pct(d), grid: true },
           marks: [
-            Plot.ruleX([london.days], { stroke: C.grid, strokeWidth: 1.5 }),
-            Plot.ruleY([london.approval], { stroke: C.grid, strokeWidth: 1.5 }),
-            Plot.text([`London median ${london.days} days`], { x: london.days, frameAnchor: "top", dy: -12, fill: C.ink2, textAnchor: "start", dx: 4 }),
+            Plot.ruleX([london.days], { stroke: V.grid, strokeWidth: 1.5 }),
+            Plot.ruleY([london.approval], { stroke: V.grid, strokeWidth: 1.5 }),
+            Plot.text([`London median ${london.days} days`], { x: london.days, frameAnchor: "top", dy: -12, fill: V.ink2, textAnchor: "start", dx: 4 }),
             Plot.dot(data, {
               x: "median_days", y: "approval_rate", r: (d: Row) => Math.sqrt(d.decided) / 7,
-              fill: (d: Row) => (highlight && d.slug !== highlight ? "#c4c7cc" : C.approved), fillOpacity: 0.85, stroke: "#fff", strokeWidth: 1.5,
+              fill: (d: Row) => (highlight && d.slug !== highlight ? V.dim : V.approved), fillOpacity: 0.85, stroke: V.ring, strokeWidth: 1.5,
             }),
             Plot.text(data.filter((d) => labelled.has(d.slug)), {
-              x: "median_days", y: "approval_rate", text: (d: Row) => shortName(d.name), dy: -12, fill: C.ink, fontWeight: 500,
+              x: "median_days", y: "approval_rate", text: (d: Row) => shortName(d.name), dy: -12, fill: V.ink, fontWeight: 500,
             }),
             Plot.tip(data, Plot.pointer({
               x: "median_days", y: "approval_rate",

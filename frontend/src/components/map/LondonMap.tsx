@@ -4,6 +4,8 @@ import { MapboxOverlay } from "@deck.gl/mapbox";
 import type { Layer, PickingInfo } from "@deck.gl/core";
 import { Map as MapLibre, NavigationControl, setWorkerUrl, type LngLatBoundsLike, type MapLayerMouseEvent, type StyleSpecification } from "maplibre-gl";
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { surfaceFor } from "@/components/viz/colors";
+import { useTheme } from "@/lib/theme";
 
 type Feature = { type: "Feature"; properties: { slug: string; name: string; code: string }; geometry: { type: string; coordinates: unknown } };
 type FC = { type: "FeatureCollection"; features: Feature[] };
@@ -73,6 +75,7 @@ export default function LondonMap({
   const map = useRef<MapLibre | null>(null);
   const deck = useRef<MapboxOverlay | null>(null);
   const [ready, setReady] = useState(false);
+  const dark = useTheme() === "dark";
   const wasThreeD = useRef(false);
   const [features, setFeatures] = useState<FC | null>(null);
   const [tip, setTip] = useState<{ x: number; y: number; content: ReactNode } | null>(null);
@@ -174,9 +177,20 @@ export default function LondonMap({
     if (!ready || !m || !features) return;
     for (const f of features.features) {
       const c = fill?.[f.properties.slug];
-      m.setFeatureState({ source: "boroughs", id: f.properties.slug }, { fill: c ?? "#ffffff", hasFill: !!c });
+      m.setFeatureState({ source: "boroughs", id: f.properties.slug }, { fill: c ?? surfaceFor(dark).canvas, hasFill: !!c });
     }
-  }, [ready, features, fill]);
+  }, [ready, features, fill, dark]);
+
+  // --- light / dark paint
+  useEffect(() => {
+    const m = map.current;
+    if (!ready || !m) return;
+    const s = surfaceFor(dark);
+    m.setPaintProperty("bg", "background-color", s.soft);
+    m.setPaintProperty("b-line", "line-color", ["case", ["boolean", ["feature-state", "hasFill"], false], s.canvas, s.line]);
+    m.setPaintProperty("b-hover", "line-color", s.ink);
+    m.setPaintProperty("b-highlight", "line-color", s.ink);
+  }, [ready, dark]);
 
   // --- 2D / 3D: camera tilt, rotation, and extruded boroughs
   useEffect(() => {

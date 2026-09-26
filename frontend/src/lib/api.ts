@@ -65,6 +65,9 @@ type RateRow = { n: number; approved: number; median_days: number | null; approv
 export type London = {
   scope: string;
   period: { start_min: string; start_max: string; decided_max: string };
+  /** date the application records were last fetched; absent in older data builds */
+  data_updated?: string;
+  built_at?: string;
   counts: { all_rows: number; full: number; decided: number; withdrawn: number; undecided: number };
   approval_rate: number; rejection_rate: number; approval_ci: [number, number]; withdrawal_rate: number;
   median_days: number; in_time: number; median_days_approved: number; median_days_rejected: number; rank_biserial: number;

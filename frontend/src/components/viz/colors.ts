@@ -59,3 +59,45 @@ export function rgba(h: string, a = 255): [number, number, number, number] {
   const [r, g, b] = hex(h);
   return [r, g, b, a];
 }
+
+/**
+ * The same roles as CSS variables, for Observable Plot marks and CSS: they follow the light/dark theme
+ * without re-rendering. (deck.gl, MapLibre and Plotly need concrete colours; use `C` / the theme there.)
+ */
+export const V = {
+  approved: "var(--approved)",
+  rejected: "var(--rejected)",
+  ink: "var(--ink)",
+  ink2: "var(--viz-text)",
+  grid: "var(--viz-grid)",
+  london: "var(--viz-london)",
+  dim: "var(--viz-dim)",
+  censored: "var(--viz-censored)",
+  ring: "var(--canvas)", // 2px surface ring around overlapping marks
+};
+
+// Dark mode steps: sequential runs dark -> light so low values recede into the dark surface.
+export const SEQ_DARK = ["#1a2a40", "#184f95", "#256abf", "#3987e5", "#6da7ec", "#9ec5f4", "#cde2fb"];
+export const MID_DARK = "#383835";
+
+export const sequentialFor = (dark: boolean) => (t: number) => ramp(dark ? SEQ_DARK : SEQ, t);
+
+export function divergingFor(dark: boolean) {
+  if (!dark) return diverging;
+  return (v: number, min: number, mid: number, max: number) =>
+    v >= mid
+      ? ramp([MID_DARK, "#1c5cab", "#3987e5", "#86b6ef"], (v - mid) / (max - mid || 1))
+      : ramp([MID_DARK, "#a82e2d", "#e66767", "#f3a3a2"], (mid - v) / (mid - min || 1));
+}
+
+/** Concrete colours for canvas/WebGL renderers, per theme. */
+export const surfaceFor = (dark: boolean) => ({
+  canvas: dark ? "#0f1319" : "#ffffff",
+  soft: dark ? "#161b23" : "#f8fafc",
+  line: dark ? "#2c323d" : "#c9ccd1",
+  ink: dark ? "#f1f3f6" : "#181d26",
+  text: dark ? "#a9afba" : "#41454d",
+  grid: dark ? "#2a2f38" : "#e4e3df",
+  censored: dark ? "#1c2129" : "#f3f1ec",
+  midpoint: dark ? MID_DARK : C.midpoint,
+});

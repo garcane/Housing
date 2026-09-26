@@ -3,7 +3,7 @@
 import * as Plot from "@observablehq/plot";
 import { PlotBox, PLOT_STYLE } from "@/components/viz/usePlot";
 import Figure, { Key } from "@/components/viz/Figure";
-import { C } from "@/components/viz/colors";
+import { V } from "@/components/viz/colors";
 import type { TrendRow } from "@/lib/api";
 import { useApi } from "@/lib/useApi";
 import { pct, shortName } from "@/lib/format";
@@ -17,7 +17,7 @@ export function DecisionHistogram({ slug, name }: { slug: string; name: string }
     <Figure
       title="How long decisions take"
       subtitle={`Share of decided applications by days to decision (2-week bins; the last bin is 365+ days).`}
-      legend={<><Key color={C.approved} label={shortName(name)} /><Key color={C.ink} label="London" line /></>}
+      legend={<><Key color={V.approved} label={shortName(name)} /><Key color={V.ink} label="London" line /></>}
     >
       {error ? <p className="muted">Couldn&apos;t load: {error}</p> : !data ? <div className="skeleton" style={{ height: 260 }} /> : (
         <PlotBox
@@ -30,10 +30,10 @@ export function DecisionHistogram({ slug, name }: { slug: string; name: string }
               x: { label: "Days to decision →", domain: [0, data.cap + data.bin_days] },
               y: { label: "↑ Share", tickFormat: (d: number) => pct(d), grid: true },
               marks: [
-                Plot.rectY(bins, { x1: "from", x2: "to", y: "authority", fill: C.approved, inset: 1, rx: 2 }),
-                Plot.line(bins, { x: "from", y: "london", stroke: C.ink, strokeWidth: 2, curve: "step-after" }),
-                Plot.ruleX([56], { stroke: C.ink2, strokeWidth: 1 }),
-                Plot.text(["8-week target"], { x: 56, frameAnchor: "top", dy: -14, dx: 4, textAnchor: "start", fill: C.ink2 }),
+                Plot.rectY(bins, { x1: "from", x2: "to", y: "authority", fill: V.approved, inset: 1, rx: 2 }),
+                Plot.line(bins, { x: "from", y: "london", stroke: V.ink, strokeWidth: 2, curve: "step-after" }),
+                Plot.ruleX([56], { stroke: V.ink2, strokeWidth: 1 }),
+                Plot.text(["8-week target"], { x: 56, frameAnchor: "top", dy: -14, dx: 4, textAnchor: "start", fill: V.ink2 }),
                 Plot.tip(bins, Plot.pointerX({ x: "mid", y: "authority", title: (d: Bin) =>
                   `${d.from}${d.to && d.from < data.cap ? `–${d.to - 1}` : "+"} days\n${shortName(name)}: ${pct(d.authority, 1)} (${d.n})\nLondon: ${pct(d.london, 1)}` })),
               ],
@@ -58,7 +58,7 @@ export function TrendPanels({ slug, name }: { slug: string; name: string }) {
     <Figure
       title="Trends by quarter the application started"
       subtitle="Shaded quarters still have more than 10% of applications undecided, so they will shift as slower cases are decided."
-      legend={<><Key color={C.approved} label={shortName(name)} line /><Key color={C.london} label="London" line /></>}
+      legend={<><Key color={V.approved} label={shortName(name)} line /><Key color={V.london} label="London" line /></>}
     >
       {error ? <p className="muted">Couldn&apos;t load: {error}</p> : !data ? <div className="skeleton" style={{ height: 220 }} /> : (
         <div className="grid-3">
@@ -79,12 +79,12 @@ export function TrendPanels({ slug, name }: { slug: string; name: string }) {
                     width, height: 200, marginLeft: 44, marginBottom: 36, style: PLOT_STYLE,
                     x: { type: "point", domain: quarters, label: null, tickFormat: (q: string) => (q.endsWith("Q1") ? q.slice(0, 4) : ""), tickSize: 0 },
                     y: { tickFormat: p.fmt, grid: true, label: null, zero: p.key === "undecided" },
-                    color: { domain: ["London", shortName(name)], range: [C.london, C.approved] },
+                    color: { domain: ["London", shortName(name)], range: [V.london, V.approved] },
                     marks: [
                       // full-height band per censored quarter, without touching the y scale
-                      Plot.ruleX(censored, { x: (d: string) => d, stroke: C.censored, strokeWidth: Math.max(4, ((width - 60) / quarters.length) * 0.95) }),
+                      Plot.ruleX(censored, { x: (d: string) => d, stroke: V.censored, strokeWidth: Math.max(4, ((width - 60) / quarters.length) * 0.95) }),
                       Plot.line(rows, { x: "quarter", y: p.key, stroke: "who", strokeWidth: 2 }),
-                      Plot.dot(rows.filter((r) => r.who !== "London"), { x: "quarter", y: p.key, r: 3, fill: C.approved, stroke: "#fff" }),
+                      Plot.dot(rows.filter((r) => r.who !== "London"), { x: "quarter", y: p.key, r: 3, fill: V.approved, stroke: V.ring }),
                       Plot.tip(rows, Plot.pointerX({ x: "quarter", y: p.key, stroke: "who", title: (d: TrendRow & { who: string }) =>
                         `${d.who} · ${d.quarter}\n${p.title}: ${p.fmt(d[p.key] as number)}\n${d.n.toLocaleString("en-GB")} applications` })),
                     ],
