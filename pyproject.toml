@@ -6,6 +6,8 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "cartopy>=0.26.0",
+    "duckdb>=1.5.5",
+    "fastapi>=0.141.1",
     "folium>=0.20.0",
     "geopandas>=1.1.4",
     "geoviews>=1.15.1",
@@ -22,4 +24,5 @@ dependencies = [
     "pydeck>=0.9.3",
     "scikit-learn>=1.9.1",
     "seaborn>=0.13.2",
+    "uvicorn[standard]>=0.54.0",
 ]
