@@ -4,13 +4,14 @@ import SpeedScatter from "@/components/charts/SpeedScatter";
 import OverviewMap from "@/components/OverviewMap";
 import RankingTable from "@/components/RankingTable";
 import Figure from "@/components/viz/Figure";
-import { api, type AuthoritySummary, type London } from "@/lib/api";
+import { type AuthoritySummary, type London } from "@/lib/api";
+import { serverApi } from "@/lib/server-api";
 import { num, pct, shortName } from "@/lib/format";
 
 export default async function Home() {
   const [london, { authorities, n_ranked }] = await Promise.all([
-    api<London>("/api/london"),
-    api<{ n_ranked: number; authorities: AuthoritySummary[] }>("/api/authorities"),
+    serverApi<London>("/api/london"),
+    serverApi<{ n_ranked: number; authorities: AuthoritySummary[] }>("/api/authorities"),
   ]);
   const boroughs = authorities.filter((a) => a.kind === "borough");
   const hi = london.highest[0], lo = london.lowest[0];

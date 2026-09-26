@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { api, type London } from "@/lib/api";
+import { type London } from "@/lib/api";
+import { serverApi } from "@/lib/server-api";
 import { num, pct } from "@/lib/format";
 
 export const metadata: Metadata = { title: "Methodology" };
 
 export default async function Methodology() {
-  const l = await api<London>("/api/london");
+  const l = await serverApi<London>("/api/london");
   return (
     <section className="section">
       <div className="container">

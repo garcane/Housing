@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import SearchView from "@/components/SearchView";
-import { api, type AuthoritySummary } from "@/lib/api";
+import { type AuthoritySummary } from "@/lib/api";
+import { serverApi } from "@/lib/server-api";
 
 export const metadata: Metadata = { title: "Search applications" };
 
 export default async function SearchPage() {
   const [{ authorities }, filters] = await Promise.all([
-    api<{ authorities: AuthoritySummary[] }>("/api/authorities"),
-    api<{ outcome: string[]; size: string[]; year: number[]; land_type: string[]; route: string[] }>("/api/filters"),
+    serverApi<{ authorities: AuthoritySummary[] }>("/api/authorities"),
+    serverApi<{ outcome: string[]; size: string[]; year: number[]; land_type: string[]; route: string[] }>("/api/filters"),
   ]);
   return (
     <section className="section" style={{ paddingTop: 64 }}>

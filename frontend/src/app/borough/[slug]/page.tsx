@@ -8,14 +8,15 @@ import WardScatter from "@/components/charts/WardScatter";
 import { HomesMap, LandMap } from "@/components/map/ProfileMaps";
 import Figure, { Key } from "@/components/viz/Figure";
 import { C, LAND_COLORS } from "@/components/viz/colors";
-import { api, ApiError, type Authority, type AuthoritySummary, type London } from "@/lib/api";
+import { ApiError, type Authority, type AuthoritySummary, type London } from "@/lib/api";
+import { serverApi } from "@/lib/server-api";
 import { ha, num, ordinal, pct, pts, shortName } from "@/lib/format";
 
 type Resp = { n_ranked: number; authority: Authority; london: London };
 
 async function load(slug: string) {
   try {
-    return await api<Resp>(`/api/authorities/${slug}`);
+    return await serverApi<Resp>(`/api/authorities/${slug}`);
   } catch (e) {
     if (e instanceof ApiError && e.status === 404) notFound();
     throw e;
@@ -32,7 +33,7 @@ export default async function BoroughPage({ params }: PageProps<"/borough/[slug]
   const { slug } = await params;
   const [{ authority: a, london, n_ranked }, { authorities }] = await Promise.all([
     load(slug),
-    api<{ authorities: AuthoritySummary[] }>("/api/authorities"),
+    serverApi<{ authorities: AuthoritySummary[] }>("/api/authorities"),
   ]);
   const ranked = authorities.filter((x) => x.kind === "borough" && x.reliable);
   const isOther = a.kind === "other";

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { api, type AuthoritySummary, type London } from "@/lib/api";
+import { type AuthoritySummary, type London } from "@/lib/api";
+import { serverApi } from "@/lib/server-api";
 import { num, pct } from "@/lib/format";
 
 export const metadata: Metadata = { title: "Other planning authorities" };
@@ -13,8 +14,8 @@ const ABOUT: Record<string, string> = {
 
 export default async function OtherAuthorities() {
   const [{ authorities }, london] = await Promise.all([
-    api<{ authorities: AuthoritySummary[] }>("/api/authorities"),
-    api<London>("/api/london"),
+    serverApi<{ authorities: AuthoritySummary[] }>("/api/authorities"),
+    serverApi<London>("/api/london"),
   ]);
   const others = authorities.filter((a) => a.kind === "other");
 
