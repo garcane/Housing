@@ -31,7 +31,7 @@ export function DecisionHistogram({ slug, name }: { slug: string; name: string }
               y: { label: "↑ Share", tickFormat: (d: number) => pct(d), grid: true },
               marks: [
                 Plot.rectY(bins, { x1: "from", x2: "to", y: "authority", fill: C.approved, inset: 1, rx: 2 }),
-                Plot.line(bins, { x: "mid", y: "london", stroke: C.ink, strokeWidth: 2, curve: "step" }),
+                Plot.line(bins, { x: "from", y: "london", stroke: C.ink, strokeWidth: 2, curve: "step-after" }),
                 Plot.ruleX([56], { stroke: C.ink2, strokeWidth: 1 }),
                 Plot.text(["8-week target"], { x: 56, frameAnchor: "top", dy: -14, dx: 4, textAnchor: "start", fill: C.ink2 }),
                 Plot.tip(bins, Plot.pointerX({ x: "mid", y: "authority", title: (d: Bin) =>
