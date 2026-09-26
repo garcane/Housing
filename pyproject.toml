@@ -1,0 +1,24 @@
+[project]
+name = "housing"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "cartopy>=0.26.0",
+    "folium>=0.20.0",
+    "geopandas>=1.1.4",
+    "geoviews>=1.15.1",
+    "hvplot>=0.12.2",
+    "ipyleaflet>=0.20.0",
+    "leafmap>=0.63.1",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.3",
+    "osmnx>=2.1.1",
+    "pandas>=3.0.6",
+    "plotly>=7.1.0",
+    "polars>=1.44.2",
+    "pyarrow>=25.0.1",
+    "pydeck>=0.9.3",
+    "seaborn>=0.13.2",
+]
