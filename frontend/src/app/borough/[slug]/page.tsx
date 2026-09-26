@@ -5,7 +5,7 @@ import ApprovalCIChart from "@/components/charts/ApprovalCIChart";
 import { LandShareBar, OutcomeShareBar, SizeCompare } from "@/components/charts/ProfileCharts";
 import { DecisionHistogram, TrendPanels } from "@/components/charts/TimingCharts";
 import WardScatter from "@/components/charts/WardScatter";
-import { HomesMap, LandMap } from "@/components/map/ProfileMaps";
+import { HexMap, HomesMap, LandMap } from "@/components/map/ProfileMaps";
 import Figure, { Key } from "@/components/viz/Figure";
 import { C, LAND_COLORS } from "@/components/viz/colors";
 import { ApiError, type Authority, type AuthoritySummary, type London } from "@/lib/api";
@@ -120,6 +120,7 @@ export default async function BoroughPage({ params }: PageProps<"/borough/[slug]
               <ApprovalCIChart rows={isOther ? [...ranked, { ...a, name: a.name }] : ranked} london={london.approval_rate} highlight={slug} />
             </Figure>
           </div>
+          {a.geo_borough && <HexMap slug={slug} londonApproval={london.approval_rate} />}
         </div>
       </section>
 

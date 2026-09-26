@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import LondonMap, { RampLegend } from "@/components/map/LondonMap";
+import ViewToggle, { extrusion } from "@/components/map/ViewToggle";
 import Figure from "@/components/viz/Figure";
 import { C, diverging, SEQ, sequential } from "@/components/viz/colors";
 import type { AuthoritySummary } from "@/lib/api";
@@ -24,36 +25,44 @@ const METRICS: { key: MetricKey; label: string; fmt: (v: number) => string; rank
 export default function OverviewMap({ authorities, londonApproval, nRanked }: { authorities: AuthoritySummary[]; londonApproval: number; nRanked: number }) {
   const router = useRouter();
   const [key, setKey] = useState<MetricKey>("approval_rate");
+  const [threeD, setThreeD] = useState(false);
   const metric = METRICS.find((m) => m.key === key)!;
   const bySlug = useMemo(() => Object.fromEntries(authorities.map((a) => [a.slug, a])), [authorities]);
 
-  const { fill, min, max } = useMemo(() => {
+  const { fill, min, max, heights } = useMemo(() => {
     const vals = authorities.filter((a) => a.code && a[key] != null && a.kind === "borough").map((a) => a[key] as number);
     const lo = Math.min(...vals), hi = Math.max(...vals);
     const f: Record<string, string> = {};
+    const h: Record<string, number> = {};
     for (const a of authorities) {
       const v = a[key] as number | null;
       if (!a.code || v == null) continue;
       f[a.slug] = key === "approval_rate" ? diverging(v, lo, londonApproval, hi) : sequential((v - lo) / (hi - lo || 1));
+      h[a.slug] = extrusion(Math.min(Math.max(v, lo), hi), lo, hi);
     }
-    return { fill: f, min: lo, max: hi };
+    return { fill: f, min: lo, max: hi, heights: h };
   }, [authorities, key, londonApproval]);
 
   return (
     <Figure
       title={metric.label}
-      subtitle="Click a borough to open its profile. City of London is shown but not ranked."
+      subtitle={threeD
+        ? "Height and colour both show the measure. Click a borough to open its profile."
+        : "Click a borough to open its profile. City of London is shown but not ranked."}
       pngName={`london-${key}`}
     >
-      <div className="row" style={{ marginBottom: 16 }} data-no-export>
+      <div className="row" style={{ marginBottom: 16, alignItems: "flex-end" }} data-no-export>
         <label className="field" style={{ minWidth: 280 }}>
           <span>Colour boroughs by</span>
           <select className="select" value={key} onChange={(e) => setKey(e.target.value as MetricKey)}>
             {METRICS.map((m) => <option key={m.key} value={m.key}>{m.label}</option>)}
           </select>
         </label>
+        <ViewToggle threeD={threeD} onChange={setThreeD} />
       </div>
       <LondonMap
+        threeD={threeD}
+        extrude={heights}
         ariaLabel={`Map of London boroughs coloured by ${metric.label}`}
         fill={fill}
         onSelect={(slug) => router.push(`/borough/${slug}`)}

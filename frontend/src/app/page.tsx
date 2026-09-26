@@ -2,6 +2,7 @@ import Link from "next/link";
 import ApprovalCIChart from "@/components/charts/ApprovalCIChart";
 import SpeedScatter from "@/components/charts/SpeedScatter";
 import OverviewMap from "@/components/OverviewMap";
+import { HexMap, HomesMap } from "@/components/map/ProfileMaps";
 import RankingTable from "@/components/RankingTable";
 import Figure from "@/components/viz/Figure";
 import { type AuthoritySummary, type London } from "@/lib/api";
@@ -124,6 +125,17 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Hexagons */}
+      <section className="section band-soft">
+        <div className="container">
+          <div className="section-head">
+            <h2 className="display-md">Inside the boroughs</h2>
+            <p className="lede">Approval rates vary within boroughs too. Switch to 3D to see where applications are concentrated.</p>
+          </div>
+          <HexMap londonApproval={london.approval_rate} />
+        </div>
+      </section>
+
       {/* Dwellings callout */}
       <section className="section-tight">
         <div className="container">
@@ -146,6 +158,12 @@ export default async function Home() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section-tight">
+        <div className="container">
+          <HomesMap />
         </div>
       </section>
 

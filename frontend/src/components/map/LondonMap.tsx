@@ -2,7 +2,7 @@
 
 import { MapboxOverlay } from "@deck.gl/mapbox";
 import type { Layer, PickingInfo } from "@deck.gl/core";
-import { Map as MapLibre, NavigationControl, setWorkerUrl, type LngLatBoundsLike, type StyleSpecification } from "maplibre-gl";
+import { Map as MapLibre, NavigationControl, setWorkerUrl, type LngLatBoundsLike, type MapLayerMouseEvent, type StyleSpecification } from "maplibre-gl";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 type Feature = { type: "Feature"; properties: { slug: string; name: string; code: string }; geometry: { type: string; coordinates: unknown } };
@@ -49,6 +49,8 @@ export default function LondonMap({
   className = "",
   children,
   ariaLabel,
+  threeD = false,
+  extrude,
 }: {
   /** slug -> fill colour; boroughs without a value render as a pale outline */
   fill?: Record<string, string>;
@@ -62,11 +64,16 @@ export default function LondonMap({
   className?: string;
   children?: ReactNode;
   ariaLabel: string;
+  /** tilt the camera and allow rotating; deck.gl layers can then draw columns/hexagons in 3D */
+  threeD?: boolean;
+  /** slug -> extrusion height in metres; in 3D the boroughs are raised by these instead of drawn flat */
+  extrude?: Record<string, number>;
 }) {
   const el = useRef<HTMLDivElement>(null);
   const map = useRef<MapLibre | null>(null);
   const deck = useRef<MapboxOverlay | null>(null);
   const [ready, setReady] = useState(false);
+  const wasThreeD = useRef(false);
   const [features, setFeatures] = useState<FC | null>(null);
   const [tip, setTip] = useState<{ x: number; y: number; content: ReactNode } | null>(null);
   const handlers = useRef({ onSelect, boroughTooltip, deckTooltip });
@@ -88,7 +95,7 @@ export default function LondonMap({
       pitchWithRotate: false,
       cooperativeGestures: false,
     });
-    m.addControl(new NavigationControl({ showCompass: false }), "top-right");
+    m.addControl(new NavigationControl({ showCompass: true, visualizePitch: true }), "top-right");
     m.scrollZoom.disable(); // don't hijack page scroll; zoom with the buttons or ctrl + scroll
     m.getCanvas().addEventListener("wheel", (e) => { if (e.ctrlKey) m.scrollZoom.enable(); else m.scrollZoom.disable(); });
 
@@ -109,6 +116,13 @@ export default function LondonMap({
       m.addSource("boroughs", { type: "geojson", data: fc, promoteId: "slug" });
       m.addLayer({ id: "b-fill", type: "fill", source: "boroughs",
         paint: { "fill-color": ["coalesce", ["feature-state", "fill"], "#ffffff"], "fill-opacity": ["case", ["boolean", ["feature-state", "hasFill"], false], 0.9, 1] } });
+      m.addLayer({ id: "b-extrude", type: "fill-extrusion", source: "boroughs", layout: { visibility: "none" },
+        paint: {
+          "fill-extrusion-color": ["coalesce", ["feature-state", "fill"], "#ffffff"],
+          "fill-extrusion-height": ["coalesce", ["feature-state", "height"], 0],
+          "fill-extrusion-opacity": 0.92,
+          "fill-extrusion-vertical-gradient": true,
+        } });
       m.addLayer({ id: "b-line", type: "line", source: "boroughs", paint: { "line-color": ["case", ["boolean", ["feature-state", "hasFill"], false], "#ffffff", "#c9ccd1"], "line-width": 1.2 } });
       m.addLayer({ id: "b-hover", type: "line", source: "boroughs",
         paint: { "line-color": "#181d26", "line-width": ["case", ["boolean", ["feature-state", "hover"], false], 1.6, 0] } });
@@ -116,7 +130,7 @@ export default function LondonMap({
         paint: { "line-color": "#181d26", "line-width": 2.4 } });
 
       let hovered: string | null = null;
-      m.on("mousemove", "b-fill", (e) => {
+      const onMove = (e: MapLayerMouseEvent) => {
         const f = e.features?.[0];
         if (!f) return;
         const slug = f.properties.slug as string;
@@ -128,17 +142,22 @@ export default function LondonMap({
         const picked = deck.current?.pickObject({ x: e.point.x, y: e.point.y, radius: 4 });
         if (c && !picked) setTip({ x: e.point.x, y: e.point.y, content: c });
         else if (!picked) setTip(null);
-      });
-      m.on("mouseleave", "b-fill", () => {
+      };
+      const onLeave = () => {
         if (hovered) m.setFeatureState({ source: "boroughs", id: hovered }, { hover: false });
         hovered = null;
         m.getCanvas().style.cursor = "";
         setTip(null);
-      });
-      m.on("click", "b-fill", (e) => {
+      };
+      const onClick = (e: MapLayerMouseEvent) => {
         const slug = e.features?.[0]?.properties.slug as string | undefined;
         if (slug) handlers.current.onSelect?.(slug);
-      });
+      };
+      for (const id of ["b-fill", "b-extrude"]) {
+        m.on("mousemove", id, onMove);
+        m.on("mouseleave", id, onLeave);
+        m.on("click", id, onClick);
+      }
       setFeatures(fc);
       setReady(true);
     });
@@ -159,13 +178,38 @@ export default function LondonMap({
     }
   }, [ready, features, fill]);
 
+  // --- 2D / 3D: camera tilt, rotation, and extruded boroughs
+  useEffect(() => {
+    const m = map.current;
+    if (!ready || !m || !features) return;
+    const raised = threeD && !!extrude;
+    for (const f of features.features) {
+      m.setFeatureState({ source: "boroughs", id: f.properties.slug }, { height: extrude?.[f.properties.slug] ?? 0 });
+    }
+    m.setLayoutProperty("b-extrude", "visibility", raised ? "visible" : "none");
+    m.setLayoutProperty("b-fill", "visibility", raised ? "none" : "visible");
+    // outlines sit at ground level, so they'd cut through raised boroughs
+    for (const id of ["b-line", "b-hover", "b-highlight"]) m.setLayoutProperty(id, "visibility", raised ? "none" : "visible");
+    if (threeD) {
+      m.dragRotate.enable();
+      m.touchPitch.enable();
+    } else {
+      m.dragRotate.disable();
+      m.touchPitch.disable();
+    }
+    // a tilted view pushes the far side into the distance, so zoom in a little when switching to 3D
+    const dz = threeD === wasThreeD.current ? 0 : threeD ? 0.45 : -0.45;
+    wasThreeD.current = threeD;
+    m.easeTo({ pitch: threeD ? 55 : 0, bearing: threeD ? -18 : 0, zoom: m.getZoom() + dz, duration: 800 });
+  }, [ready, features, threeD, extrude]);
+
   // --- highlight + zoom
   useEffect(() => {
     const m = map.current;
     if (!ready || !m || !features) return;
     m.setFilter("b-highlight", ["==", ["get", "slug"], highlight ?? ""]);
     const f = highlight ? features.features.find((x) => x.properties.slug === highlight) : null;
-    m.fitBounds(f ? bboxOf(f) : LONDON_BOUNDS, { padding: f ? 40 : 16, duration: 0 });
+    m.fitBounds(f ? bboxOf(f) : LONDON_BOUNDS, { padding: f ? 40 : 16, duration: 0, pitch: m.getPitch(), bearing: m.getBearing() });
   }, [ready, features, highlight]);
 
   // --- optional context layers (lazy-loaded GeoJSON)
@@ -200,6 +244,11 @@ export default function LondonMap({
     <div className={`map ${className}`} role="region" aria-label={ariaLabel} onMouseLeave={() => setTip(null)}>
       <div ref={el} style={{ position: "absolute", inset: 0 }} />
       {children}
+      {threeD && (
+        <div className="map-overlay" style={{ right: 12, bottom: 36, fontSize: 12, padding: "6px 10px" }} data-no-export>
+          Right-drag (or Ctrl + drag) to tilt and rotate
+        </div>
+      )}
       {tip && (
         <div className="map-tooltip" style={{ left: Math.min(tip.x + 14, 9999), top: tip.y + 14 }}>
           {tip.content}
