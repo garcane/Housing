@@ -14,4 +14,3 @@ data/housing.csv
 data/green_belt_england.geojson
 data/brownfield_land_register.csv
 data/osm_landuse_london.gpkg
-data/processed/

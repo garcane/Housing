@@ -1,0 +1,315 @@
+{
+ "scope": "32 London boroughs (City of London and the two development corporations are reported separately)",
+ "period": {
+  "start_min": "2022-01-01",
+  "start_max": "2025-12-31",
+  "decided_max": "2026-07-31"
+ },
+ "counts": {
+  "all_rows": 181929,
+  "full": 98310,
+  "decided": 87645,
+  "withdrawn": 3960,
+  "undecided": 5842
+ },
+ "approval_rate": 0.786993,
+ "rejection_rate": 0.213007,
+ "approval_ci": [
+  0.78427,
+  0.789691
+ ],
+ "withdrawal_rate": 0.040281,
+ "median_days": 63.0,
+ "in_time": 0.383375,
+ "median_days_approved": 63.0,
+ "median_days_rejected": 64.0,
+ "rank_biserial": 0.058139,
+ "speed_vs_approval": {
+  "spearman_rho": 0.16561,
+  "p": 0.365021
+ },
+ "approval_range": {
+  "min": 0.609967,
+  "max": 0.941895
+ },
+ "highest": [
+  {
+   "name": "Hammersmith and Fulham",
+   "slug": "hammersmith-and-fulham",
+   "value": 0.941895
+  },
+  {
+   "name": "Wandsworth",
+   "slug": "wandsworth",
+   "value": 0.934392
+  },
+  {
+   "name": "Southwark",
+   "slug": "southwark",
+   "value": 0.916604
+  }
+ ],
+ "lowest": [
+  {
+   "name": "Barking and Dagenham",
+   "slug": "barking-and-dagenham",
+   "value": 0.609967
+  },
+  {
+   "name": "Greenwich",
+   "slug": "greenwich",
+   "value": 0.634634
+  },
+  {
+   "name": "Croydon",
+   "slug": "croydon",
+   "value": 0.693145
+  }
+ ],
+ "fastest": [
+  {
+   "name": "Barking and Dagenham",
+   "slug": "barking-and-dagenham",
+   "value": 51.0
+  },
+  {
+   "name": "Hillingdon",
+   "slug": "hillingdon",
+   "value": 56.0
+  },
+  {
+   "name": "Newham",
+   "slug": "newham",
+   "value": 56.0
+  }
+ ],
+ "slowest": [
+  {
+   "name": "Camden",
+   "slug": "camden",
+   "value": 104.0
+  },
+  {
+   "name": "Westminster",
+   "slug": "westminster",
+   "value": 82.5
+  },
+  {
+   "name": "Hammersmith and Fulham",
+   "slug": "hammersmith-and-fulham",
+   "value": 80.0
+  }
+ ],
+ "by_size": [
+  {
+   "size": "Small",
+   "n": 73297,
+   "approved": 57157,
+   "median_days": 60.0,
+   "approval_rate": 0.7798,
+   "ci_low": 0.776785,
+   "ci_high": 0.782785
+  },
+  {
+   "size": "Medium",
+   "n": 9230,
+   "approved": 8021,
+   "median_days": 92.0,
+   "approval_rate": 0.869014,
+   "ci_low": 0.861977,
+   "ci_high": 0.875744
+  },
+  {
+   "size": "Large",
+   "n": 893,
+   "approved": 795,
+   "median_days": 163.0,
+   "approval_rate": 0.890258,
+   "ci_low": 0.868061,
+   "ci_high": 0.909111
+  }
+ ],
+ "by_route": [
+  {
+   "route": "Committee",
+   "n": 1043,
+   "approved": 902,
+   "median_days": 200.0,
+   "approval_rate": 0.864813,
+   "ci_low": 0.842718,
+   "ci_high": 0.884231
+  },
+  {
+   "route": "Delegated",
+   "n": 64429,
+   "approved": 50506,
+   "median_days": 63.0,
+   "approval_rate": 0.783902,
+   "ci_low": 0.780707,
+   "ci_high": 0.787063
+  },
+  {
+   "route": "Other",
+   "n": 255,
+   "approved": 192,
+   "median_days": 95.5,
+   "approval_rate": 0.752941,
+   "ci_low": 0.69651,
+   "ci_high": 0.801865
+  },
+  {
+   "route": "Unknown",
+   "n": 21918,
+   "approved": 17376,
+   "median_days": 61.0,
+   "approval_rate": 0.792773,
+   "ci_low": 0.787356,
+   "ci_high": 0.798088
+  }
+ ],
+ "by_land_type": [
+  {
+   "land_type": "Existing urban",
+   "n": 79580,
+   "approved": 62378,
+   "median_days": 63.0,
+   "approval_rate": 0.78384,
+   "ci_low": 0.780967,
+   "ci_high": 0.786686
+  },
+  {
+   "land_type": "Brownfield",
+   "n": 1592,
+   "approved": 1308,
+   "median_days": 78.0,
+   "approval_rate": 0.821608,
+   "ci_low": 0.802034,
+   "ci_high": 0.839633
+  },
+  {
+   "land_type": "Industrial",
+   "n": 371,
+   "approved": 283,
+   "median_days": 91.0,
+   "approval_rate": 0.762803,
+   "ci_low": 0.716964,
+   "ci_high": 0.803256
+  },
+  {
+   "land_type": "Virgin / greenfield",
+   "n": 42,
+   "approved": 22,
+   "median_days": 107.0,
+   "approval_rate": 0.52381,
+   "ci_low": 0.377222,
+   "ci_high": 0.666406
+  }
+ ],
+ "by_land_type_medium_large": [
+  {
+   "land_type": "Existing urban",
+   "n": 7700,
+   "approved": 6700,
+   "median_days": 95.0,
+   "approval_rate": 0.87013,
+   "ci_low": 0.862436,
+   "ci_high": 0.877454
+  },
+  {
+   "land_type": "Brownfield",
+   "n": 466,
+   "approved": 436,
+   "median_days": 111.0,
+   "approval_rate": 0.935622,
+   "ci_low": 0.909584,
+   "ci_high": 0.954537
+  },
+  {
+   "land_type": "Industrial",
+   "n": 122,
+   "approved": 109,
+   "median_days": 154.0,
+   "approval_rate": 0.893443,
+   "ci_low": 0.8262,
+   "ci_high": 0.936664
+  },
+  {
+   "land_type": "Virgin / greenfield",
+   "n": 17,
+   "approved": 7,
+   "median_days": 126.0,
+   "approval_rate": 0.411765,
+   "ci_low": 0.216108,
+   "ci_high": 0.639949
+  }
+ ],
+ "green_belt": [
+  {
+   "group": "In Green Belt",
+   "n": 722,
+   "approved": 442,
+   "median_days": 75.0,
+   "approval_rate": 0.612188,
+   "ci_low": 0.576142,
+   "ci_high": 0.647047
+  },
+  {
+   "group": "Outside Green Belt",
+   "n": 80863,
+   "approved": 63549,
+   "median_days": 63.0,
+   "approval_rate": 0.785885,
+   "ci_low": 0.783044,
+   "ci_high": 0.788699
+  }
+ ],
+ "dwellings": {
+  "schemes": 634,
+  "proposed": 99810.0,
+  "approved": 30789.0,
+  "top5_share": 0.605898
+ },
+ "land": {
+  "area_ha": 157044.120593,
+  "population": 9107278,
+  "brownfield_ha": 4357.796418,
+  "industrial_ha": 4719.996419,
+  "greenfield_ha": 12367.053532,
+  "green_belt_ha": 34789.265887,
+  "available_ha": 21444.846369,
+  "brownfield_sites": 4918,
+  "density_per_km2": 5799.184309,
+  "pop_year": "2025"
+ },
+ "timing_gaps": [
+  {
+   "name": "Barking and Dagenham",
+   "slug": "barking-and-dagenham",
+   "coverage": 0.429236,
+   "last_start": "2023-07"
+  },
+  {
+   "name": "Hackney",
+   "slug": "hackney",
+   "coverage": 0.428979,
+   "last_start": "2023-06"
+  },
+  {
+   "name": "Harrow",
+   "slug": "harrow",
+   "coverage": 0.435041,
+   "last_start": "2023-08"
+  },
+  {
+   "name": "Waltham Forest",
+   "slug": "waltham-forest",
+   "coverage": 0.415881,
+   "last_start": "2023-06"
+  }
+ ],
+ "means": {
+  "approved_per_1000_people": 3.110804,
+  "available_pct": 0.108158,
+  "committee_share": 0.018057
+ }
+}

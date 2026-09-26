@@ -4,9 +4,9 @@ Approval rates, decision times, new homes and available land for full planning a
 
 ```
 data/                 raw inputs (housing.csv, brownfield register, Green Belt, OSM land use, population, boundaries)
-data/processed/       pipeline output served by the API (Parquet, JSON, GeoJSON)
 backend/pipeline/     cleaning rules shared with the notebook + the build script
 backend/app/          FastAPI + DuckDB API
+backend/data/         pipeline output served by the API (Parquet, JSON, GeoJSON; committed)
 frontend/             Next.js app (MapLibre + deck.gl maps, Observable Plot + Plotly charts)
 ```
 
@@ -22,7 +22,7 @@ The large inputs aren't in git (`housing.csv` alone is over GitHub's 100 MB limi
 | `osm_landuse_london.gpkg` | Created by the notebook (section 10) via OSMnx if it's missing |
 | `london_boroughs.geojson`, `population_boroughs.csv` | Included in the repo (ONS boundaries; Nomis mid-year population) |
 
-`data/processed/` is generated: run the pipeline below.
+`backend/data/` is generated from them by the pipeline below, and is committed so the API can deploy without the raw files.
 
 ## Run it locally
 

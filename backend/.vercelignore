@@ -1,0 +1,2 @@
+# The pipeline needs geopandas and the raw data; the deployed API only reads data/.
+pipeline/

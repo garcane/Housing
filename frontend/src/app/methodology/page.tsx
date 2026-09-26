@@ -103,7 +103,7 @@ export default async function Methodology() {
           <h2>Rebuilding the data</h2>
           <p>
             Run <code>uv run python -m backend.pipeline.build</code> after updating anything in <code>data/</code>. It rewrites
-            <code> data/processed/</code> and prints the key numbers, so you can check them against section 8 of the notebook.
+            <code> backend/data/</code> and prints the key numbers, so you can check them against section 8 of the notebook.
           </p>
         </div>
       </div>

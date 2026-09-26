@@ -1,4 +1,4 @@
-// Types mirror data/processed/*.json written by backend/pipeline/build.py.
+// Types mirror backend/data/*.json written by backend/pipeline/build.py.
 
 export type Ranks = Partial<Record<
   "approval_rate" | "median_days" | "in_time" | "approved_dwellings" | "approved_per_1000_people" | "available_ha" | "density_per_km2",

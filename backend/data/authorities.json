@@ -1,0 +1,3798 @@
+{
+ "n_ranked": 32,
+ "authorities": [
+  {
+   "slug": "barking-and-dagenham",
+   "name": "Barking and Dagenham",
+   "area_name": "Barking and Dagenham",
+   "kind": "borough",
+   "total_full": 1639,
+   "approved": 918,
+   "rejected": 587,
+   "withdrawn": 51,
+   "undecided": 70,
+   "decided": 1505,
+   "approval_rate": 0.609967,
+   "rejection_rate": 0.390033,
+   "withdrawal_rate": 0.031117,
+   "ci_low": 0.585074,
+   "ci_high": 0.6343,
+   "reliable": true,
+   "median_days": 51.0,
+   "q1": 45.0,
+   "q3": 55.0,
+   "p90": 70.0,
+   "mean_days": 54.529412,
+   "in_time": 0.794118,
+   "median_approved": 51.0,
+   "median_rejected": 52.0,
+   "committee_share": null,
+   "median_days_committee": null,
+   "median_days_delegated": null,
+   "days_coverage": 0.429236,
+   "days_last_start": "2023-07",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 620,
+     "approval_rate": 0.603226
+    },
+    {
+     "size": "Medium",
+     "n": 30,
+     "approval_rate": 0.7
+    },
+    {
+     "size": "Large",
+     "n": 2,
+     "approval_rate": 1.0
+    }
+   ],
+   "ranks": {
+    "approval_rate": 32.0,
+    "median_days": 1.0,
+    "in_time": 1.0,
+    "approved_dwellings": 17.0,
+    "approved_per_1000_people": 16.0,
+    "available_ha": 6.0,
+    "density_per_km2": 17.0
+   },
+   "geo_borough": "Barking and Dagenham",
+   "code": "E09000002",
+   "dwellings": {
+    "schemes": 11.0,
+    "proposed_dwellings": 16571.0,
+    "approved_schemes": 3.0,
+    "approved_dwellings": 335.0,
+    "median_scheme_size": 190.0,
+    "largest_scheme": 13046.0,
+    "share_of_london_approved": 0.010881,
+    "approved_per_km2": 9.2799,
+    "approved_per_1000_people": 1.405821
+   },
+   "land": {
+    "area_ha": 3609.952592,
+    "population": 238295,
+    "pop_year": 2025,
+    "density_per_km2": 6601.056217,
+    "brownfield_ha": 614.69,
+    "industrial_ha": 455.195853,
+    "greenfield_ha": 81.427108,
+    "green_belt_ha": 527.01353,
+    "available_ha": 1151.312961,
+    "brownfield_pct": 0.170276,
+    "industrial_pct": 0.126095,
+    "greenfield_pct": 0.022556,
+    "green_belt_pct": 0.145989,
+    "available_pct": 0.318927,
+    "brownfield_sites": 86,
+    "brownfield_permissioned_share": 0.406977,
+    "brownfield_max_dwellings": 59639.0,
+    "register_updated": "2024-12-31"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 1417,
+     "approval_rate": 0.609739
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 52,
+     "approval_rate": 0.596154
+    },
+    {
+     "land_type": "Industrial",
+     "n": 11,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "barnet",
+   "name": "Barnet",
+   "area_name": "Barnet",
+   "kind": "borough",
+   "total_full": 5218,
+   "approved": 3313,
+   "rejected": 848,
+   "withdrawn": 279,
+   "undecided": 778,
+   "decided": 4161,
+   "approval_rate": 0.796203,
+   "rejection_rate": 0.203797,
+   "withdrawal_rate": 0.053469,
+   "ci_low": 0.783693,
+   "ci_high": 0.808167,
+   "reliable": true,
+   "median_days": 58.0,
+   "q1": 56.0,
+   "q3": 82.0,
+   "p90": 140.0,
+   "mean_days": 83.964432,
+   "in_time": 0.418169,
+   "median_approved": 58.0,
+   "median_rejected": 58.0,
+   "committee_share": 0.030222,
+   "median_days_committee": 199.0,
+   "median_days_delegated": 57.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 4115,
+     "approval_rate": 0.796598
+    },
+    {
+     "size": "Medium",
+     "n": 10,
+     "approval_rate": 1.0
+    },
+    {
+     "size": "Large",
+     "n": 36,
+     "approval_rate": 0.694444
+    }
+   ],
+   "ranks": {
+    "approval_rate": 14.0,
+    "median_days": 7.0,
+    "in_time": 12.0,
+    "approved_dwellings": 1.0,
+    "approved_per_1000_people": 2.0,
+    "available_ha": 5.0,
+    "density_per_km2": 25.0
+   },
+   "geo_borough": "Barnet",
+   "code": "E09000003",
+   "dwellings": {
+    "schemes": 41.0,
+    "proposed_dwellings": 14149.0,
+    "approved_schemes": 19.0,
+    "approved_dwellings": 5474.0,
+    "median_scheme_size": 92.0,
+    "largest_scheme": 3365.0,
+    "share_of_london_approved": 0.177791,
+    "approved_per_km2": 63.060196,
+    "approved_per_1000_people": 13.413806
+   },
+   "land": {
+    "area_ha": 8680.594683,
+    "population": 408087,
+    "pop_year": 2025,
+    "density_per_km2": 4701.14105,
+    "brownfield_ha": 555.612399,
+    "industrial_ha": 76.702165,
+    "greenfield_ha": 969.084204,
+    "green_belt_ha": 2388.64467,
+    "available_ha": 1601.398768,
+    "brownfield_pct": 0.064006,
+    "industrial_pct": 0.008836,
+    "greenfield_pct": 0.111638,
+    "green_belt_pct": 0.275171,
+    "available_pct": 0.18448,
+    "brownfield_sites": 239,
+    "brownfield_permissioned_share": 0.937238,
+    "brownfield_max_dwellings": 18063.0,
+    "register_updated": "2024-12-31"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 4004,
+     "approval_rate": 0.797702
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 148,
+     "approval_rate": 0.763514
+    },
+    {
+     "land_type": "Industrial",
+     "n": 3,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 7,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "bexley",
+   "name": "Bexley",
+   "area_name": "Bexley",
+   "kind": "borough",
+   "total_full": 3933,
+   "approved": 2327,
+   "rejected": 358,
+   "withdrawn": 39,
+   "undecided": 1209,
+   "decided": 2685,
+   "approval_rate": 0.866667,
+   "rejection_rate": 0.133333,
+   "withdrawal_rate": 0.009916,
+   "ci_low": 0.853283,
+   "ci_high": 0.879002,
+   "reliable": true,
+   "median_days": 57.0,
+   "q1": 55.0,
+   "q3": 71.0,
+   "p90": 105.0,
+   "mean_days": 71.922533,
+   "in_time": 0.494972,
+   "median_approved": 56.0,
+   "median_rejected": 60.5,
+   "committee_share": 0.003353,
+   "median_days_committee": 100.0,
+   "median_days_delegated": 57.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 2663,
+     "approval_rate": 0.866316
+    },
+    {
+     "size": "Medium",
+     "n": 11,
+     "approval_rate": 0.818182
+    },
+    {
+     "size": "Large",
+     "n": 11,
+     "approval_rate": 1.0
+    }
+   ],
+   "ranks": {
+    "approval_rate": 7.0,
+    "median_days": 6.0,
+    "in_time": 6.0,
+    "approved_dwellings": 23.0,
+    "approved_per_1000_people": 24.0,
+    "available_ha": 8.0,
+    "density_per_km2": 27.0
+   },
+   "geo_borough": "Bexley",
+   "code": "E09000004",
+   "dwellings": {
+    "schemes": 10.0,
+    "proposed_dwellings": 432.0,
+    "approved_schemes": 3.0,
+    "approved_dwellings": 142.0,
+    "median_scheme_size": 31.5,
+    "largest_scheme": 117.0,
+    "share_of_london_approved": 0.004612,
+    "approved_per_km2": 2.343807,
+    "approved_per_1000_people": 0.552308
+   },
+   "land": {
+    "area_ha": 6058.520335,
+    "population": 257103,
+    "pop_year": 2025,
+    "density_per_km2": 4243.659933,
+    "brownfield_ha": 82.478,
+    "industrial_ha": 390.55908,
+    "greenfield_ha": 174.743501,
+    "green_belt_ha": 1118.355963,
+    "available_ha": 647.780581,
+    "brownfield_pct": 0.013614,
+    "industrial_pct": 0.064464,
+    "greenfield_pct": 0.028843,
+    "green_belt_pct": 0.184592,
+    "available_pct": 0.106921,
+    "brownfield_sites": 101,
+    "brownfield_permissioned_share": 0.633663,
+    "brownfield_max_dwellings": 7244.0,
+    "register_updated": "2024-12-19"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 2651,
+     "approval_rate": 0.86722
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 29,
+     "approval_rate": 0.793103
+    },
+    {
+     "land_type": "Industrial",
+     "n": 7,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 1,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "brent",
+   "name": "Brent",
+   "area_name": "Brent",
+   "kind": "borough",
+   "total_full": 3959,
+   "approved": 2660,
+   "rejected": 1142,
+   "withdrawn": 107,
+   "undecided": 47,
+   "decided": 3802,
+   "approval_rate": 0.699632,
+   "rejection_rate": 0.300368,
+   "withdrawal_rate": 0.027027,
+   "ci_low": 0.684864,
+   "ci_high": 0.713996,
+   "reliable": true,
+   "median_days": 64.0,
+   "q1": 56.0,
+   "q3": 82.0,
+   "p90": 114.9,
+   "mean_days": 78.280905,
+   "in_time": 0.323251,
+   "median_approved": 64.0,
+   "median_rejected": 64.0,
+   "committee_share": 0.005786,
+   "median_days_committee": 186.0,
+   "median_days_delegated": 64.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 3797,
+     "approval_rate": 0.699236
+    },
+    {
+     "size": "Medium",
+     "n": 1,
+     "approval_rate": 1.0
+    },
+    {
+     "size": "Large",
+     "n": 2,
+     "approval_rate": 1.0
+    }
+   ],
+   "ranks": {
+    "approval_rate": 28.0,
+    "median_days": 17.0,
+    "in_time": 20.0,
+    "approved_dwellings": 27.0,
+    "approved_per_1000_people": 28.0,
+    "available_ha": 12.0,
+    "density_per_km2": 14.0
+   },
+   "geo_borough": "Brent",
+   "code": "E09000005",
+   "dwellings": {
+    "schemes": 10.0,
+    "proposed_dwellings": 913.0,
+    "approved_schemes": 3.0,
+    "approved_dwellings": 89.0,
+    "median_scheme_size": 27.0,
+    "largest_scheme": 464.0,
+    "share_of_london_approved": 0.002891,
+    "approved_per_km2": 2.058926,
+    "approved_per_1000_people": 0.252697
+   },
+   "land": {
+    "area_ha": 4322.64274,
+    "population": 352201,
+    "pop_year": 2025,
+    "density_per_km2": 8147.816538,
+    "brownfield_ha": 226.934223,
+    "industrial_ha": 289.456213,
+    "greenfield_ha": 6.940001,
+    "green_belt_ha": 0.0,
+    "available_ha": 523.330437,
+    "brownfield_pct": 0.052499,
+    "industrial_pct": 0.066963,
+    "greenfield_pct": 0.001605,
+    "green_belt_pct": 0.0,
+    "available_pct": 0.121067,
+    "brownfield_sites": 200,
+    "brownfield_permissioned_share": 0.445,
+    "brownfield_max_dwellings": 26591.0,
+    "register_updated": "2026-04-10"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 3702,
+     "approval_rate": 0.701513
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 51,
+     "approval_rate": 0.666667
+    },
+    {
+     "land_type": "Industrial",
+     "n": 14,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "bromley",
+   "name": "Bromley",
+   "area_name": "Bromley",
+   "kind": "borough",
+   "total_full": 5023,
+   "approved": 3786,
+   "rejected": 1142,
+   "withdrawn": 64,
+   "undecided": 31,
+   "decided": 4928,
+   "approval_rate": 0.768263,
+   "rejection_rate": 0.231737,
+   "withdrawal_rate": 0.012741,
+   "ci_low": 0.756276,
+   "ci_high": 0.779832,
+   "reliable": true,
+   "median_days": 62.0,
+   "q1": 56.0,
+   "q3": 93.0,
+   "p90": 153.3,
+   "mean_days": 91.348417,
+   "in_time": 0.394278,
+   "median_approved": 60.0,
+   "median_rejected": 70.0,
+   "committee_share": 0.015272,
+   "median_days_committee": 151.0,
+   "median_days_delegated": 62.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 4714,
+     "approval_rate": 0.769622
+    },
+    {
+     "size": "Medium",
+     "n": 188,
+     "approval_rate": 0.760638
+    },
+    {
+     "size": "Large",
+     "n": 26,
+     "approval_rate": 0.576923
+    }
+   ],
+   "ranks": {
+    "approval_rate": 19.0,
+    "median_days": 12.0,
+    "in_time": 13.0,
+    "approved_dwellings": 13.0,
+    "approved_per_1000_people": 15.0,
+    "available_ha": 1.0,
+    "density_per_km2": 32.0
+   },
+   "geo_borough": "Bromley",
+   "code": "E09000006",
+   "dwellings": {
+    "schemes": 11.0,
+    "proposed_dwellings": 757.0,
+    "approved_schemes": 6.0,
+    "approved_dwellings": 643.0,
+    "median_scheme_size": 23.0,
+    "largest_scheme": 275.0,
+    "share_of_london_approved": 0.020884,
+    "approved_per_km2": 4.283103,
+    "approved_per_1000_people": 1.913417
+   },
+   "land": {
+    "area_ha": 15012.479462,
+    "population": 336048,
+    "pop_year": 2025,
+    "density_per_km2": 2238.457683,
+    "brownfield_ha": 52.179,
+    "industrial_ha": 95.339843,
+    "greenfield_ha": 3644.438325,
+    "green_belt_ha": 7659.291578,
+    "available_ha": 3791.957168,
+    "brownfield_pct": 0.003476,
+    "industrial_pct": 0.006351,
+    "greenfield_pct": 0.242761,
+    "green_belt_pct": 0.510195,
+    "available_pct": 0.252587,
+    "brownfield_sites": 89,
+    "brownfield_permissioned_share": 0.865169,
+    "brownfield_max_dwellings": 166.0,
+    "register_updated": "2017-12-31"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 4849,
+     "approval_rate": 0.771499
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 19,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Industrial",
+     "n": 4,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 7,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "camden",
+   "name": "Camden",
+   "area_name": "Camden",
+   "kind": "borough",
+   "total_full": 1612,
+   "approved": 1216,
+   "rejected": 172,
+   "withdrawn": 145,
+   "undecided": 77,
+   "decided": 1388,
+   "approval_rate": 0.876081,
+   "rejection_rate": 0.123919,
+   "withdrawal_rate": 0.08995,
+   "ci_low": 0.857701,
+   "ci_high": 0.892384,
+   "reliable": true,
+   "median_days": 104.0,
+   "q1": 58.0,
+   "q3": 185.0,
+   "p90": 313.3,
+   "mean_days": 150.565562,
+   "in_time": 0.237752,
+   "median_approved": 104.5,
+   "median_rejected": 99.5,
+   "committee_share": 0.163663,
+   "median_days_committee": 176.0,
+   "median_days_delegated": 92.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 1196,
+     "approval_rate": 0.875418
+    },
+    {
+     "size": "Medium",
+     "n": 173,
+     "approval_rate": 0.884393
+    },
+    {
+     "size": "Large",
+     "n": 18,
+     "approval_rate": 0.833333
+    }
+   ],
+   "ranks": {
+    "approval_rate": 4.0,
+    "median_days": 32.0,
+    "in_time": 30.0,
+    "approved_dwellings": 28.0,
+    "approved_per_1000_people": 27.0,
+    "available_ha": 29.0,
+    "density_per_km2": 9.0
+   },
+   "geo_borough": "Camden",
+   "code": "E09000007",
+   "dwellings": {
+    "schemes": 7.0,
+    "proposed_dwellings": 120.0,
+    "approved_schemes": 4.0,
+    "approved_dwellings": 85.0,
+    "median_scheme_size": 15.0,
+    "largest_scheme": 31.0,
+    "share_of_london_approved": 0.002761,
+    "approved_per_km2": 3.90124,
+    "approved_per_1000_people": 0.392323
+   },
+   "land": {
+    "area_ha": 2178.794289,
+    "population": 216658,
+    "pop_year": 2025,
+    "density_per_km2": 9943.940144,
+    "brownfield_ha": 61.24831,
+    "industrial_ha": 21.599851,
+    "greenfield_ha": 0.0,
+    "green_belt_ha": 0.0,
+    "available_ha": 82.848161,
+    "brownfield_pct": 0.028111,
+    "industrial_pct": 0.009914,
+    "greenfield_pct": 0.0,
+    "green_belt_pct": 0.0,
+    "available_pct": 0.038025,
+    "brownfield_sites": 151,
+    "brownfield_permissioned_share": 0.913907,
+    "brownfield_max_dwellings": 13647.0,
+    "register_updated": "2025-12-07"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 1364,
+     "approval_rate": 0.877566
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 23,
+     "approval_rate": 0.826087
+    },
+    {
+     "land_type": "Industrial",
+     "n": 1,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "croydon",
+   "name": "Croydon",
+   "area_name": "Croydon",
+   "kind": "borough",
+   "total_full": 4546,
+   "approved": 2993,
+   "rejected": 1325,
+   "withdrawn": 127,
+   "undecided": 101,
+   "decided": 4318,
+   "approval_rate": 0.693145,
+   "rejection_rate": 0.306855,
+   "withdrawal_rate": 0.027937,
+   "ci_low": 0.679222,
+   "ci_high": 0.706724,
+   "reliable": true,
+   "median_days": 75.0,
+   "q1": 56.0,
+   "q3": 120.0,
+   "p90": 196.0,
+   "mean_days": 105.276748,
+   "in_time": 0.289023,
+   "median_approved": 72.0,
+   "median_rejected": 81.0,
+   "committee_share": 0.018312,
+   "median_days_committee": 242.0,
+   "median_days_delegated": 74.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 4281,
+     "approval_rate": 0.69423
+    },
+    {
+     "size": "Medium",
+     "n": 17,
+     "approval_rate": 0.529412
+    },
+    {
+     "size": "Large",
+     "n": 20,
+     "approval_rate": 0.6
+    }
+   ],
+   "ranks": {
+    "approval_rate": 30.0,
+    "median_days": 28.0,
+    "in_time": 25.0,
+    "approved_dwellings": 5.0,
+    "approved_per_1000_people": 7.0,
+    "available_ha": 9.0,
+    "density_per_km2": 24.0
+   },
+   "geo_borough": "Croydon",
+   "code": "E09000008",
+   "dwellings": {
+    "schemes": 53.0,
+    "proposed_dwellings": 3990.0,
+    "approved_schemes": 22.0,
+    "approved_dwellings": 2150.0,
+    "median_scheme_size": 27.0,
+    "largest_scheme": 806.0,
+    "share_of_london_approved": 0.06983,
+    "approved_per_km2": 24.851434,
+    "approved_per_1000_people": 5.242816
+   },
+   "land": {
+    "area_ha": 8651.412181,
+    "population": 410085,
+    "pop_year": 2025,
+    "density_per_km2": 4740.093194,
+    "brownfield_ha": 172.61771,
+    "industrial_ha": 150.019529,
+    "greenfield_ha": 319.095829,
+    "green_belt_ha": 2189.682181,
+    "available_ha": 641.733068,
+    "brownfield_pct": 0.019953,
+    "industrial_pct": 0.01734,
+    "greenfield_pct": 0.036884,
+    "green_belt_pct": 0.253101,
+    "available_pct": 0.074177,
+    "brownfield_sites": 490,
+    "brownfield_permissioned_share": 0.689796,
+    "brownfield_max_dwellings": 32866.0,
+    "register_updated": "2020-12-22"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 4215,
+     "approval_rate": 0.696797
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 80,
+     "approval_rate": 0.525
+    },
+    {
+     "land_type": "Industrial",
+     "n": 20,
+     "approval_rate": 0.55
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 2,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "ealing",
+   "name": "Ealing",
+   "area_name": "Ealing",
+   "kind": "borough",
+   "total_full": 3852,
+   "approved": 3035,
+   "rejected": 573,
+   "withdrawn": 183,
+   "undecided": 61,
+   "decided": 3608,
+   "approval_rate": 0.841186,
+   "rejection_rate": 0.158814,
+   "withdrawal_rate": 0.047508,
+   "ci_low": 0.828898,
+   "ci_high": 0.852749,
+   "reliable": true,
+   "median_days": 59.0,
+   "q1": 53.0,
+   "q3": 89.0,
+   "p90": 143.0,
+   "mean_days": 85.852827,
+   "in_time": 0.45704,
+   "median_approved": 60.0,
+   "median_rejected": 56.0,
+   "committee_share": 0.006543,
+   "median_days_committee": 344.0,
+   "median_days_delegated": 59.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 3574,
+     "approval_rate": 0.840795
+    },
+    {
+     "size": "Medium",
+     "n": 16,
+     "approval_rate": 0.875
+    },
+    {
+     "size": "Large",
+     "n": 18,
+     "approval_rate": 0.888889
+    }
+   ],
+   "ranks": {
+    "approval_rate": 9.0,
+    "median_days": 9.0,
+    "in_time": 8.0,
+    "approved_dwellings": 4.0,
+    "approved_per_1000_people": 5.0,
+    "available_ha": 10.0,
+    "density_per_km2": 16.0
+   },
+   "geo_borough": "Ealing",
+   "code": "E09000009",
+   "dwellings": {
+    "schemes": 35.0,
+    "proposed_dwellings": 3519.0,
+    "approved_schemes": 20.0,
+    "approved_dwellings": 2391.0,
+    "median_scheme_size": 49.0,
+    "largest_scheme": 669.0,
+    "share_of_london_approved": 0.077658,
+    "approved_per_km2": 43.040092,
+    "approved_per_1000_people": 6.177145
+   },
+   "land": {
+    "area_ha": 5555.285486,
+    "population": 387072,
+    "pop_year": 2025,
+    "density_per_km2": 6967.634714,
+    "brownfield_ha": 150.62,
+    "industrial_ha": 407.652881,
+    "greenfield_ha": 72.407069,
+    "green_belt_ha": 308.601626,
+    "available_ha": 630.679949,
+    "brownfield_pct": 0.027113,
+    "industrial_pct": 0.073381,
+    "greenfield_pct": 0.013034,
+    "green_belt_pct": 0.055551,
+    "available_pct": 0.113528,
+    "brownfield_sites": 111,
+    "brownfield_permissioned_share": 0.36036,
+    "brownfield_max_dwellings": 16.0,
+    "register_updated": "2024-12-20"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 3570,
+     "approval_rate": 0.842017
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 30,
+     "approval_rate": 0.866667
+    },
+    {
+     "land_type": "Industrial",
+     "n": 37,
+     "approval_rate": 0.702703
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "enfield",
+   "name": "Enfield",
+   "area_name": "Enfield",
+   "kind": "borough",
+   "total_full": 3431,
+   "approved": 2041,
+   "rejected": 785,
+   "withdrawn": 103,
+   "undecided": 502,
+   "decided": 2826,
+   "approval_rate": 0.722222,
+   "rejection_rate": 0.277778,
+   "withdrawal_rate": 0.03002,
+   "ci_low": 0.705415,
+   "ci_high": 0.738426,
+   "reliable": true,
+   "median_days": 65.0,
+   "q1": 56.0,
+   "q3": 84.0,
+   "p90": 125.0,
+   "mean_days": 81.08528,
+   "in_time": 0.287332,
+   "median_approved": 64.0,
+   "median_rejected": 68.0,
+   "committee_share": 0.004248,
+   "median_days_committee": 236.0,
+   "median_days_delegated": 65.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 2821,
+     "approval_rate": 0.722084
+    },
+    {
+     "size": "Medium",
+     "n": 4,
+     "approval_rate": 0.75
+    },
+    {
+     "size": "Large",
+     "n": 1,
+     "approval_rate": 1.0
+    }
+   ],
+   "ranks": {
+    "approval_rate": 25.0,
+    "median_days": 20.0,
+    "in_time": 26.0,
+    "approved_dwellings": 29.0,
+    "approved_per_1000_people": 29.0,
+    "available_ha": 4.0,
+    "density_per_km2": 28.0
+   },
+   "geo_borough": "Enfield",
+   "code": "E09000010",
+   "dwellings": {
+    "schemes": 3.0,
+    "proposed_dwellings": 88.0,
+    "approved_schemes": 1.0,
+    "approved_dwellings": 58.0,
+    "median_scheme_size": 18.0,
+    "largest_scheme": 58.0,
+    "share_of_london_approved": 0.001884,
+    "approved_per_km2": 0.705984,
+    "approved_per_1000_people": 0.176078
+   },
+   "land": {
+    "area_ha": 8215.488,
+    "population": 329400,
+    "pop_year": 2025,
+    "density_per_km2": 4009.500105,
+    "brownfield_ha": 49.815,
+    "industrial_ha": 395.105069,
+    "greenfield_ha": 1195.883643,
+    "green_belt_ha": 3070.321461,
+    "available_ha": 1640.803712,
+    "brownfield_pct": 0.006064,
+    "industrial_pct": 0.048093,
+    "greenfield_pct": 0.145565,
+    "green_belt_pct": 0.373724,
+    "available_pct": 0.199721,
+    "brownfield_sites": 27,
+    "brownfield_permissioned_share": 1.0,
+    "brownfield_max_dwellings": 0.0,
+    "register_updated": "2017-12-31"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 2806,
+     "approval_rate": 0.722381
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 4,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Industrial",
+     "n": 15,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 1,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "greenwich",
+   "name": "Greenwich",
+   "area_name": "Greenwich",
+   "kind": "borough",
+   "total_full": 2286,
+   "approved": 1334,
+   "rejected": 768,
+   "withdrawn": 143,
+   "undecided": 41,
+   "decided": 2102,
+   "approval_rate": 0.634634,
+   "rejection_rate": 0.365366,
+   "withdrawal_rate": 0.062555,
+   "ci_low": 0.61382,
+   "ci_high": 0.654956,
+   "reliable": true,
+   "median_days": 63.0,
+   "q1": 56.0,
+   "q3": 87.0,
+   "p90": 139.0,
+   "mean_days": 84.071361,
+   "in_time": 0.388677,
+   "median_approved": 64.0,
+   "median_rejected": 59.0,
+   "committee_share": 0.034804,
+   "median_days_committee": 175.0,
+   "median_days_delegated": 62.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 2097,
+     "approval_rate": 0.633763
+    },
+    {
+     "size": "Medium",
+     "n": 1,
+     "approval_rate": 1.0
+    },
+    {
+     "size": "Large",
+     "n": 4,
+     "approval_rate": 1.0
+    }
+   ],
+   "ranks": {
+    "approval_rate": 31.0,
+    "median_days": 13.0,
+    "in_time": 14.0,
+    "approved_dwellings": 31.0,
+    "approved_per_1000_people": 32.0,
+    "available_ha": 17.0,
+    "density_per_km2": 18.0
+   },
+   "geo_borough": "Greenwich",
+   "code": "E09000011",
+   "dwellings": {
+    "schemes": 11.0,
+    "proposed_dwellings": 3442.0,
+    "approved_schemes": 1.0,
+    "approved_dwellings": 14.0,
+    "median_scheme_size": 24.0,
+    "largest_scheme": 1290.0,
+    "share_of_london_approved": 0.000455,
+    "approved_per_km2": 0.296022,
+    "approved_per_1000_people": 0.046477
+   },
+   "land": {
+    "area_ha": 4729.378837,
+    "population": 301225,
+    "pop_year": 2025,
+    "density_per_km2": 6369.229668,
+    "brownfield_ha": 122.13,
+    "industrial_ha": 160.384039,
+    "greenfield_ha": 86.405179,
+    "green_belt_ha": 0.649307,
+    "available_ha": 368.919218,
+    "brownfield_pct": 0.025824,
+    "industrial_pct": 0.033912,
+    "greenfield_pct": 0.01827,
+    "green_belt_pct": 0.000137,
+    "available_pct": 0.078006,
+    "brownfield_sites": 67,
+    "brownfield_permissioned_share": 0.880597,
+    "brownfield_max_dwellings": 18751.0,
+    "register_updated": "2019-12-18"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 2065,
+     "approval_rate": 0.631477
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 8,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Industrial",
+     "n": 10,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "hackney",
+   "name": "Hackney",
+   "area_name": "Hackney",
+   "kind": "borough",
+   "total_full": 1689,
+   "approved": 1080,
+   "rejected": 321,
+   "withdrawn": 56,
+   "undecided": 146,
+   "decided": 1401,
+   "approval_rate": 0.770878,
+   "rejection_rate": 0.229122,
+   "withdrawal_rate": 0.033156,
+   "ci_low": 0.748148,
+   "ci_high": 0.792127,
+   "reliable": true,
+   "median_days": 63.0,
+   "q1": 56.0,
+   "q3": 91.0,
+   "p90": 134.0,
+   "mean_days": 82.966722,
+   "in_time": 0.371048,
+   "median_approved": 63.0,
+   "median_rejected": 58.0,
+   "committee_share": 0.00409,
+   "median_days_committee": 164.5,
+   "median_days_delegated": 64.0,
+   "days_coverage": 0.428979,
+   "days_last_start": "2023-06",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 462,
+     "approval_rate": 0.686147
+    },
+    {
+     "size": "Medium",
+     "n": 141,
+     "approval_rate": 0.971631
+    },
+    {
+     "size": "Large",
+     "n": 2,
+     "approval_rate": 1.0
+    }
+   ],
+   "ranks": {
+    "approval_rate": 18.0,
+    "median_days": 13.0,
+    "in_time": 15.0,
+    "approved_dwellings": 11.0,
+    "approved_per_1000_people": 11.0,
+    "available_ha": 32.0,
+    "density_per_km2": 3.0
+   },
+   "geo_borough": "Hackney",
+   "code": "E09000012",
+   "dwellings": {
+    "schemes": 19.0,
+    "proposed_dwellings": 1801.0,
+    "approved_schemes": 6.0,
+    "approved_dwellings": 669.0,
+    "median_scheme_size": 37.0,
+    "largest_scheme": 511.0,
+    "share_of_london_approved": 0.021729,
+    "approved_per_km2": 35.122893,
+    "approved_per_1000_people": 2.512761
+   },
+   "land": {
+    "area_ha": 1904.740587,
+    "population": 266241,
+    "pop_year": 2025,
+    "density_per_km2": 13977.80894,
+    "brownfield_ha": 6.9,
+    "industrial_ha": 23.158241,
+    "greenfield_ha": 2.090848,
+    "green_belt_ha": 0.065629,
+    "available_ha": 32.149089,
+    "brownfield_pct": 0.003623,
+    "industrial_pct": 0.012158,
+    "greenfield_pct": 0.001098,
+    "green_belt_pct": 3.4e-05,
+    "available_pct": 0.016878,
+    "brownfield_sites": 38,
+    "brownfield_permissioned_share": 0.894737,
+    "brownfield_max_dwellings": 3222.0,
+    "register_updated": "2019-07-10"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 1400,
+     "approval_rate": 0.771429
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 1,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Industrial",
+     "n": 5,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "hammersmith-and-fulham",
+   "name": "Hammersmith and Fulham",
+   "area_name": "Hammersmith and Fulham",
+   "kind": "borough",
+   "total_full": 2656,
+   "approved": 2237,
+   "rejected": 138,
+   "withdrawn": 141,
+   "undecided": 126,
+   "decided": 2375,
+   "approval_rate": 0.941895,
+   "rejection_rate": 0.058105,
+   "withdrawal_rate": 0.053087,
+   "ci_low": 0.931753,
+   "ci_high": 0.950609,
+   "reliable": true,
+   "median_days": 80.0,
+   "q1": 62.0,
+   "q3": 126.5,
+   "p90": 209.0,
+   "mean_days": 117.056842,
+   "in_time": 0.078316,
+   "median_approved": 81.0,
+   "median_rejected": 70.5,
+   "committee_share": 0.0,
+   "median_days_committee": null,
+   "median_days_delegated": 193.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 78,
+     "approval_rate": 0.987179
+    },
+    {
+     "size": "Medium",
+     "n": 2270,
+     "approval_rate": 0.940969
+    },
+    {
+     "size": "Large",
+     "n": 17,
+     "approval_rate": 0.882353
+    }
+   ],
+   "ranks": {
+    "approval_rate": 1.0,
+    "median_days": 30.0,
+    "in_time": 32.0,
+    "approved_dwellings": 9.0,
+    "approved_per_1000_people": 6.0,
+    "available_ha": 26.0,
+    "density_per_km2": 6.0
+   },
+   "geo_borough": "Hammersmith and Fulham",
+   "code": "E09000013",
+   "dwellings": {
+    "schemes": 26.0,
+    "proposed_dwellings": 3988.0,
+    "approved_schemes": 9.0,
+    "approved_dwellings": 1129.0,
+    "median_scheme_size": 31.5,
+    "largest_scheme": 2044.0,
+    "share_of_london_approved": 0.036669,
+    "approved_per_km2": 68.885099,
+    "approved_per_1000_people": 5.935358
+   },
+   "land": {
+    "area_ha": 1638.961126,
+    "population": 190216,
+    "pop_year": 2025,
+    "density_per_km2": 11605.888448,
+    "brownfield_ha": 86.622,
+    "industrial_ha": 25.130131,
+    "greenfield_ha": 0.33217,
+    "green_belt_ha": 0.0,
+    "available_ha": 112.084301,
+    "brownfield_pct": 0.052852,
+    "industrial_pct": 0.015333,
+    "greenfield_pct": 0.000203,
+    "green_belt_pct": 0.0,
+    "available_pct": 0.068387,
+    "brownfield_sites": 56,
+    "brownfield_permissioned_share": 0.410714,
+    "brownfield_max_dwellings": 5188.0,
+    "register_updated": "2021-12-20"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 2365,
+     "approval_rate": 0.94334
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 8,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Industrial",
+     "n": 7,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "haringey",
+   "name": "Haringey",
+   "area_name": "Haringey",
+   "kind": "borough",
+   "total_full": 2252,
+   "approved": 1852,
+   "rejected": 306,
+   "withdrawn": 63,
+   "undecided": 31,
+   "decided": 2158,
+   "approval_rate": 0.858202,
+   "rejection_rate": 0.141798,
+   "withdrawal_rate": 0.027975,
+   "ci_low": 0.842846,
+   "ci_high": 0.872285,
+   "reliable": true,
+   "median_days": 58.0,
+   "q1": 56.0,
+   "q3": 92.0,
+   "p90": 154.0,
+   "mean_days": 88.23909,
+   "in_time": 0.477252,
+   "median_approved": 59.0,
+   "median_rejected": 56.0,
+   "committee_share": 0.006348,
+   "median_days_committee": 317.0,
+   "median_days_delegated": 57.0,
+   "days_coverage": 0.998146,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 1525,
+     "approval_rate": 0.832787
+    },
+    {
+     "size": "Medium",
+     "n": 618,
+     "approval_rate": 0.919094
+    },
+    {
+     "size": "Large",
+     "n": 15,
+     "approval_rate": 0.933333
+    }
+   ],
+   "ranks": {
+    "approval_rate": 8.0,
+    "median_days": 7.0,
+    "in_time": 7.0,
+    "approved_dwellings": 24.0,
+    "approved_per_1000_people": 25.0,
+    "available_ha": 21.0,
+    "density_per_km2": 12.0
+   },
+   "geo_borough": "Haringey",
+   "code": "E09000014",
+   "dwellings": {
+    "schemes": 8.0,
+    "proposed_dwellings": 307.0,
+    "approved_schemes": 3.0,
+    "approved_dwellings": 138.0,
+    "median_scheme_size": 36.5,
+    "largest_scheme": 73.0,
+    "share_of_london_approved": 0.004482,
+    "approved_per_km2": 4.661508,
+    "approved_per_1000_people": 0.518372
+   },
+   "land": {
+    "area_ha": 2960.415634,
+    "population": 266218,
+    "pop_year": 2025,
+    "density_per_km2": 8992.588639,
+    "brownfield_ha": 161.484,
+    "industrial_ha": 96.406951,
+    "greenfield_ha": 0.677415,
+    "green_belt_ha": 61.088374,
+    "available_ha": 258.568366,
+    "brownfield_pct": 0.054548,
+    "industrial_pct": 0.032565,
+    "greenfield_pct": 0.000229,
+    "green_belt_pct": 0.020635,
+    "available_pct": 0.087342,
+    "brownfield_sites": 179,
+    "brownfield_permissioned_share": 0.670391,
+    "brownfield_max_dwellings": 13110.0,
+    "register_updated": "2021-02-26"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 2109,
+     "approval_rate": 0.859175
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 43,
+     "approval_rate": 0.813953
+    },
+    {
+     "land_type": "Industrial",
+     "n": 5,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "harrow",
+   "name": "Harrow",
+   "area_name": "Harrow",
+   "kind": "borough",
+   "total_full": 3120,
+   "approved": 1954,
+   "rejected": 740,
+   "withdrawn": 174,
+   "undecided": 1,
+   "decided": 2694,
+   "approval_rate": 0.725316,
+   "rejection_rate": 0.274684,
+   "withdrawal_rate": 0.055769,
+   "ci_low": 0.708148,
+   "ci_high": 0.741841,
+   "reliable": true,
+   "median_days": 63.0,
+   "q1": 56.0,
+   "q3": 91.0,
+   "p90": 145.8,
+   "mean_days": 84.840444,
+   "in_time": 0.419795,
+   "median_approved": 63.0,
+   "median_rejected": 60.0,
+   "committee_share": 0.019608,
+   "median_days_committee": 118.0,
+   "median_days_delegated": 62.0,
+   "days_coverage": 0.435041,
+   "days_last_start": "2023-08",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 1289,
+     "approval_rate": 0.707525
+    },
+    {
+     "size": "Medium",
+     "n": 1,
+     "approval_rate": 1.0
+    },
+    {
+     "size": "Large",
+     "n": 4,
+     "approval_rate": 0.5
+    }
+   ],
+   "ranks": {
+    "approval_rate": 24.0,
+    "median_days": 13.0,
+    "in_time": 11.0,
+    "approved_dwellings": 18.0,
+    "approved_per_1000_people": 18.0,
+    "available_ha": 13.0,
+    "density_per_km2": 21.0
+   },
+   "geo_borough": "Harrow",
+   "code": "E09000015",
+   "dwellings": {
+    "schemes": 21.0,
+    "proposed_dwellings": 5654.0,
+    "approved_schemes": 7.0,
+    "approved_dwellings": 322.0,
+    "median_scheme_size": 33.0,
+    "largest_scheme": 3365.0,
+    "share_of_london_approved": 0.010458,
+    "approved_per_km2": 6.378689,
+    "approved_per_1000_people": 1.181166
+   },
+   "land": {
+    "area_ha": 5048.059541,
+    "population": 272612,
+    "pop_year": 2025,
+    "density_per_km2": 5400.3325,
+    "brownfield_ha": 102.483271,
+    "industrial_ha": 34.90039,
+    "greenfield_ha": 339.421017,
+    "green_belt_ha": 1088.864635,
+    "available_ha": 476.804679,
+    "brownfield_pct": 0.020302,
+    "industrial_pct": 0.006914,
+    "greenfield_pct": 0.067238,
+    "green_belt_pct": 0.2157,
+    "available_pct": 0.094453,
+    "brownfield_sites": 102,
+    "brownfield_permissioned_share": 0.823529,
+    "brownfield_max_dwellings": 0.0,
+    "register_updated": "2017-11-28"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 2652,
+     "approval_rate": 0.727753
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 20,
+     "approval_rate": 0.6
+    },
+    {
+     "land_type": "Industrial",
+     "n": 4,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 2,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "havering",
+   "name": "Havering",
+   "area_name": "Havering",
+   "kind": "borough",
+   "total_full": 3582,
+   "approved": 2484,
+   "rejected": 909,
+   "withdrawn": 145,
+   "undecided": 44,
+   "decided": 3393,
+   "approval_rate": 0.732095,
+   "rejection_rate": 0.267905,
+   "withdrawal_rate": 0.04048,
+   "ci_low": 0.716937,
+   "ci_high": 0.746729,
+   "reliable": true,
+   "median_days": 64.0,
+   "q1": 56.0,
+   "q3": 86.0,
+   "p90": 128.0,
+   "mean_days": 84.444018,
+   "in_time": 0.256721,
+   "median_approved": 63.0,
+   "median_rejected": 67.5,
+   "committee_share": null,
+   "median_days_committee": null,
+   "median_days_delegated": null,
+   "days_coverage": 0.997642,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 2189,
+     "approval_rate": 0.718593
+    },
+    {
+     "size": "Medium",
+     "n": 1189,
+     "approval_rate": 0.75778
+    },
+    {
+     "size": "Large",
+     "n": 13,
+     "approval_rate": 0.615385
+    }
+   ],
+   "ranks": {
+    "approval_rate": 22.0,
+    "median_days": 17.0,
+    "in_time": 29.0,
+    "approved_dwellings": 30.0,
+    "approved_per_1000_people": 30.0,
+    "available_ha": 2.0,
+    "density_per_km2": 31.0
+   },
+   "geo_borough": "Havering",
+   "code": "E09000016",
+   "dwellings": {
+    "schemes": 10.0,
+    "proposed_dwellings": 2407.0,
+    "approved_schemes": 1.0,
+    "approved_dwellings": 30.0,
+    "median_scheme_size": 38.5,
+    "largest_scheme": 900.0,
+    "share_of_london_approved": 0.000974,
+    "approved_per_km2": 0.267074,
+    "approved_per_1000_people": 0.106843
+   },
+   "land": {
+    "area_ha": 11232.829031,
+    "population": 280787,
+    "pop_year": 2025,
+    "density_per_km2": 2499.699757,
+    "brownfield_ha": 103.9,
+    "industrial_ha": 331.311119,
+    "greenfield_ha": 2517.816205,
+    "green_belt_ha": 6063.041369,
+    "available_ha": 2953.027324,
+    "brownfield_pct": 0.00925,
+    "industrial_pct": 0.029495,
+    "greenfield_pct": 0.224148,
+    "green_belt_pct": 0.539761,
+    "available_pct": 0.262893,
+    "brownfield_sites": 106,
+    "brownfield_permissioned_share": 0.669811,
+    "brownfield_max_dwellings": 0.0,
+    "register_updated": "2021-02-19"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 3329,
+     "approval_rate": 0.734455
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 18,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Industrial",
+     "n": 18,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 13,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "hillingdon",
+   "name": "Hillingdon",
+   "area_name": "Hillingdon",
+   "kind": "borough",
+   "total_full": 9168,
+   "approved": 7277,
+   "rejected": 1433,
+   "withdrawn": 367,
+   "undecided": 91,
+   "decided": 8710,
+   "approval_rate": 0.835476,
+   "rejection_rate": 0.164524,
+   "withdrawal_rate": 0.040031,
+   "ci_low": 0.827543,
+   "ci_high": 0.843114,
+   "reliable": true,
+   "median_days": 56.0,
+   "q1": 52.0,
+   "q3": 77.0,
+   "p90": 121.0,
+   "mean_days": 73.938002,
+   "in_time": 0.546269,
+   "median_approved": 56.0,
+   "median_rejected": 57.0,
+   "committee_share": null,
+   "median_days_committee": null,
+   "median_days_delegated": null,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 6043,
+     "approval_rate": 0.82095
+    },
+    {
+     "size": "Medium",
+     "n": 2513,
+     "approval_rate": 0.864704
+    },
+    {
+     "size": "Large",
+     "n": 154,
+     "approval_rate": 0.928571
+    }
+   ],
+   "ranks": {
+    "approval_rate": 10.0,
+    "median_days": 2.0,
+    "in_time": 4.0,
+    "approved_dwellings": 10.0,
+    "approved_per_1000_people": 13.0,
+    "available_ha": 3.0,
+    "density_per_km2": 30.0
+   },
+   "geo_borough": "Hillingdon",
+   "code": "E09000017",
+   "dwellings": {
+    "schemes": 19.0,
+    "proposed_dwellings": 1119.0,
+    "approved_schemes": 13.0,
+    "approved_dwellings": 723.0,
+    "median_scheme_size": 49.0,
+    "largest_scheme": 158.0,
+    "share_of_london_approved": 0.023482,
+    "approved_per_km2": 6.247905,
+    "approved_per_1000_people": 2.213236
+   },
+   "land": {
+    "area_ha": 11571.879108,
+    "population": 326671,
+    "pop_year": 2025,
+    "density_per_km2": 2822.972803,
+    "brownfield_ha": 179.949,
+    "industrial_ha": 387.175463,
+    "greenfield_ha": 1345.721062,
+    "green_belt_ha": 4869.67686,
+    "available_ha": 1912.845526,
+    "brownfield_pct": 0.015551,
+    "industrial_pct": 0.033458,
+    "greenfield_pct": 0.116292,
+    "green_belt_pct": 0.42082,
+    "available_pct": 0.165301,
+    "brownfield_sites": 202,
+    "brownfield_permissioned_share": 0.252475,
+    "brownfield_max_dwellings": 0.0,
+    "register_updated": "2020-05-31"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 2737,
+     "approval_rate": 0.845086
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 106,
+     "approval_rate": 0.811321
+    },
+    {
+     "land_type": "Industrial",
+     "n": 89,
+     "approval_rate": 0.88764
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "hounslow",
+   "name": "Hounslow",
+   "area_name": "Hounslow",
+   "kind": "borough",
+   "total_full": 3382,
+   "approved": 2103,
+   "rejected": 919,
+   "withdrawn": 300,
+   "undecided": 60,
+   "decided": 3022,
+   "approval_rate": 0.695897,
+   "rejection_rate": 0.304103,
+   "withdrawal_rate": 0.088705,
+   "ci_low": 0.679255,
+   "ci_high": 0.712041,
+   "reliable": true,
+   "median_days": 69.0,
+   "q1": 56.0,
+   "q3": 95.0,
+   "p90": 149.0,
+   "mean_days": 89.947368,
+   "in_time": 0.284674,
+   "median_approved": 70.0,
+   "median_rejected": 65.0,
+   "committee_share": 0.010024,
+   "median_days_committee": 228.0,
+   "median_days_delegated": 66.0,
+   "days_coverage": 0.999669,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 2968,
+     "approval_rate": 0.692722
+    },
+    {
+     "size": "Large",
+     "n": 54,
+     "approval_rate": 0.87037
+    }
+   ],
+   "ranks": {
+    "approval_rate": 29.0,
+    "median_days": 23.0,
+    "in_time": 27.0,
+    "approved_dwellings": 3.0,
+    "approved_per_1000_people": 3.0,
+    "available_ha": 11.0,
+    "density_per_km2": 22.0
+   },
+   "geo_borough": "Hounslow",
+   "code": "E09000018",
+   "dwellings": {
+    "schemes": 54.0,
+    "proposed_dwellings": 7365.0,
+    "approved_schemes": 32.0,
+    "approved_dwellings": 3376.0,
+    "median_scheme_size": 40.0,
+    "largest_scheme": 916.0,
+    "share_of_london_approved": 0.10965,
+    "approved_per_km2": 60.346417,
+    "approved_per_1000_people": 11.272647
+   },
+   "land": {
+    "area_ha": 5594.366905,
+    "population": 299486,
+    "pop_year": 2025,
+    "density_per_km2": 5353.349272,
+    "brownfield_ha": 64.42,
+    "industrial_ha": 283.174517,
+    "greenfield_ha": 214.327632,
+    "green_belt_ha": 1223.836704,
+    "available_ha": 561.922149,
+    "brownfield_pct": 0.011515,
+    "industrial_pct": 0.050618,
+    "greenfield_pct": 0.038311,
+    "green_belt_pct": 0.218762,
+    "available_pct": 0.100444,
+    "brownfield_sites": 173,
+    "brownfield_permissioned_share": 0.768786,
+    "brownfield_max_dwellings": 10357.0,
+    "register_updated": "2025-12-10"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 2967,
+     "approval_rate": 0.694304
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 40,
+     "approval_rate": 0.725
+    },
+    {
+     "land_type": "Industrial",
+     "n": 13,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "islington",
+   "name": "Islington",
+   "area_name": "Islington",
+   "kind": "borough",
+   "total_full": 1136,
+   "approved": 827,
+   "rejected": 181,
+   "withdrawn": 54,
+   "undecided": 67,
+   "decided": 1008,
+   "approval_rate": 0.820437,
+   "rejection_rate": 0.179563,
+   "withdrawal_rate": 0.047535,
+   "ci_low": 0.795539,
+   "ci_high": 0.842901,
+   "reliable": true,
+   "median_days": 77.0,
+   "q1": 56.0,
+   "q3": 116.0,
+   "p90": 191.4,
+   "mean_days": 108.957299,
+   "in_time": 0.2572,
+   "median_approved": 79.0,
+   "median_rejected": 68.0,
+   "committee_share": 0.022472,
+   "median_days_committee": 311.5,
+   "median_days_delegated": 76.0,
+   "days_coverage": 0.999008,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 855,
+     "approval_rate": 0.805848
+    },
+    {
+     "size": "Medium",
+     "n": 145,
+     "approval_rate": 0.896552
+    },
+    {
+     "size": "Large",
+     "n": 8,
+     "approval_rate": 1.0
+    }
+   ],
+   "ranks": {
+    "approval_rate": 12.0,
+    "median_days": 29.0,
+    "in_time": 28.0,
+    "approved_dwellings": 8.0,
+    "approved_per_1000_people": 8.0,
+    "available_ha": 28.0,
+    "density_per_km2": 2.0
+   },
+   "geo_borough": "Islington",
+   "code": "E09000019",
+   "dwellings": {
+    "schemes": 32.0,
+    "proposed_dwellings": 1752.0,
+    "approved_schemes": 20.0,
+    "approved_dwellings": 1175.0,
+    "median_scheme_size": 22.5,
+    "largest_scheme": 711.0,
+    "share_of_london_approved": 0.038163,
+    "approved_per_km2": 79.105873,
+    "approved_per_1000_people": 5.232664
+   },
+   "land": {
+    "area_ha": 1485.351164,
+    "population": 224551,
+    "pop_year": 2025,
+    "density_per_km2": 15117.70452,
+    "brownfield_ha": 76.46,
+    "industrial_ha": 18.008816,
+    "greenfield_ha": 1.01399,
+    "green_belt_ha": 0.0,
+    "available_ha": 95.482806,
+    "brownfield_pct": 0.051476,
+    "industrial_pct": 0.012124,
+    "greenfield_pct": 0.000683,
+    "green_belt_pct": 0.0,
+    "available_pct": 0.064283,
+    "brownfield_sites": 65,
+    "brownfield_permissioned_share": 0.507692,
+    "brownfield_max_dwellings": 7685.0,
+    "register_updated": "2021-12-14"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 988,
+     "approval_rate": 0.821862
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 13,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Industrial",
+     "n": 6,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "kensington-and-chelsea",
+   "name": "Kensington and Chelsea",
+   "area_name": "Kensington",
+   "kind": "borough",
+   "total_full": 756,
+   "approved": 535,
+   "rejected": 82,
+   "withdrawn": 121,
+   "undecided": 18,
+   "decided": 617,
+   "approval_rate": 0.867099,
+   "rejection_rate": 0.132901,
+   "withdrawal_rate": 0.160053,
+   "ci_low": 0.838028,
+   "ci_high": 0.891627,
+   "reliable": true,
+   "median_days": 72.0,
+   "q1": 56.0,
+   "q3": 112.0,
+   "p90": 186.6,
+   "mean_days": 100.329011,
+   "in_time": 0.296596,
+   "median_approved": 73.0,
+   "median_rejected": 66.0,
+   "committee_share": null,
+   "median_days_committee": null,
+   "median_days_delegated": null,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 538,
+     "approval_rate": 0.858736
+    },
+    {
+     "size": "Medium",
+     "n": 60,
+     "approval_rate": 0.966667
+    },
+    {
+     "size": "Large",
+     "n": 19,
+     "approval_rate": 0.789474
+    }
+   ],
+   "ranks": {
+    "approval_rate": 6.0,
+    "median_days": 27.0,
+    "in_time": 24.0,
+    "approved_dwellings": 32.0,
+    "approved_per_1000_people": 31.0,
+    "available_ha": 30.0,
+    "density_per_km2": 4.0
+   },
+   "geo_borough": "Kensington and Chelsea",
+   "code": "E09000020",
+   "dwellings": {
+    "schemes": 3.0,
+    "proposed_dwellings": 3622.0,
+    "approved_schemes": 1.0,
+    "approved_dwellings": 13.0,
+    "median_scheme_size": 1090.0,
+    "largest_scheme": 2519.0,
+    "share_of_london_approved": 0.000422,
+    "approved_per_km2": 1.070302,
+    "approved_per_1000_people": 0.089204
+   },
+   "land": {
+    "area_ha": 1214.610892,
+    "population": 145734,
+    "pop_year": 2025,
+    "density_per_km2": 11998.410431,
+    "brownfield_ha": 72.969345,
+    "industrial_ha": 5.406124,
+    "greenfield_ha": 0.723783,
+    "green_belt_ha": 0.0,
+    "available_ha": 79.099252,
+    "brownfield_pct": 0.060076,
+    "industrial_pct": 0.004451,
+    "greenfield_pct": 0.000596,
+    "green_belt_pct": 0.0,
+    "available_pct": 0.065123,
+    "brownfield_sites": 74,
+    "brownfield_permissioned_share": 0.635135,
+    "brownfield_max_dwellings": 14531.0,
+    "register_updated": "2023-12-31"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 585,
+     "approval_rate": 0.864957
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 9,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Industrial",
+     "n": 0,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "kingston-upon-thames",
+   "name": "Kingston upon Thames",
+   "area_name": "Kingston",
+   "kind": "borough",
+   "total_full": 3808,
+   "approved": 2568,
+   "rejected": 858,
+   "withdrawn": 93,
+   "undecided": 289,
+   "decided": 3426,
+   "approval_rate": 0.749562,
+   "rejection_rate": 0.250438,
+   "withdrawal_rate": 0.024422,
+   "ci_low": 0.73478,
+   "ci_high": 0.763786,
+   "reliable": true,
+   "median_days": 64.0,
+   "q1": 56.0,
+   "q3": 82.0,
+   "p90": 113.0,
+   "mean_days": 77.307064,
+   "in_time": 0.344425,
+   "median_approved": 63.0,
+   "median_rejected": 67.0,
+   "committee_share": 0.01143,
+   "median_days_committee": 206.0,
+   "median_days_delegated": 63.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 2897,
+     "approval_rate": 0.72903
+    },
+    {
+     "size": "Medium",
+     "n": 514,
+     "approval_rate": 0.863813
+    },
+    {
+     "size": "Large",
+     "n": 15,
+     "approval_rate": 0.8
+    }
+   ],
+   "ranks": {
+    "approval_rate": 21.0,
+    "median_days": 17.0,
+    "in_time": 18.0,
+    "approved_dwellings": 26.0,
+    "approved_per_1000_people": 22.0,
+    "available_ha": 14.0,
+    "density_per_km2": 26.0
+   },
+   "geo_borough": "Kingston upon Thames",
+   "code": "E09000021",
+   "dwellings": {
+    "schemes": 21.0,
+    "proposed_dwellings": 3601.0,
+    "approved_schemes": 6.0,
+    "approved_dwellings": 136.0,
+    "median_scheme_size": 20.0,
+    "largest_scheme": 2170.0,
+    "share_of_london_approved": 0.004417,
+    "approved_per_km2": 3.649611,
+    "approved_per_1000_people": 0.787215
+   },
+   "land": {
+    "area_ha": 3726.42501,
+    "population": 172761,
+    "pop_year": 2025,
+    "density_per_km2": 4636.105638,
+    "brownfield_ha": 0.29,
+    "industrial_ha": 53.016233,
+    "greenfield_ha": 412.227703,
+    "green_belt_ha": 638.476526,
+    "available_ha": 465.533937,
+    "brownfield_pct": 7.8e-05,
+    "industrial_pct": 0.014227,
+    "greenfield_pct": 0.110623,
+    "green_belt_pct": 0.171338,
+    "available_pct": 0.124928,
+    "brownfield_sites": 2,
+    "brownfield_permissioned_share": 1.0,
+    "brownfield_max_dwellings": 0.0,
+    "register_updated": "2017-12-12"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 3418,
+     "approval_rate": 0.749854
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 4,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Industrial",
+     "n": 3,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 1,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "lambeth",
+   "name": "Lambeth",
+   "area_name": "Lambeth",
+   "kind": "borough",
+   "total_full": 2606,
+   "approved": 1693,
+   "rejected": 627,
+   "withdrawn": 150,
+   "undecided": 136,
+   "decided": 2320,
+   "approval_rate": 0.729741,
+   "rejection_rate": 0.270259,
+   "withdrawal_rate": 0.057559,
+   "ci_low": 0.711301,
+   "ci_high": 0.747422,
+   "reliable": true,
+   "median_days": 66.0,
+   "q1": 56.0,
+   "q3": 90.25,
+   "p90": 145.1,
+   "mean_days": 92.766379,
+   "in_time": 0.362931,
+   "median_approved": 67.0,
+   "median_rejected": 65.0,
+   "committee_share": 0.008197,
+   "median_days_committee": 336.0,
+   "median_days_delegated": 66.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 2297,
+     "approval_rate": 0.730083
+    },
+    {
+     "size": "Medium",
+     "n": 7,
+     "approval_rate": 0.714286
+    },
+    {
+     "size": "Large",
+     "n": 16,
+     "approval_rate": 0.6875
+    }
+   ],
+   "ranks": {
+    "approval_rate": 23.0,
+    "median_days": 21.0,
+    "in_time": 16.0,
+    "approved_dwellings": 19.0,
+    "approved_per_1000_people": 20.0,
+    "available_ha": 31.0,
+    "density_per_km2": 5.0
+   },
+   "geo_borough": "Lambeth",
+   "code": "E09000022",
+   "dwellings": {
+    "schemes": 26.0,
+    "proposed_dwellings": 737.0,
+    "approved_schemes": 7.0,
+    "approved_dwellings": 274.0,
+    "median_scheme_size": 18.5,
+    "largest_scheme": 129.0,
+    "share_of_london_approved": 0.008899,
+    "approved_per_km2": 10.225409,
+    "approved_per_1000_people": 0.871784
+   },
+   "land": {
+    "area_ha": 2679.599436,
+    "population": 314298,
+    "pop_year": 2025,
+    "density_per_km2": 11729.290421,
+    "brownfield_ha": 15.06,
+    "industrial_ha": 41.392969,
+    "greenfield_ha": 1.081644,
+    "green_belt_ha": 0.0,
+    "available_ha": 57.534613,
+    "brownfield_pct": 0.00562,
+    "industrial_pct": 0.015447,
+    "greenfield_pct": 0.000404,
+    "green_belt_pct": 0.0,
+    "available_pct": 0.021471,
+    "brownfield_sites": 44,
+    "brownfield_permissioned_share": 0.954545,
+    "brownfield_max_dwellings": 2941.0,
+    "register_updated": "2025-12-20"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 2263,
+     "approval_rate": 0.730004
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 41,
+     "approval_rate": 0.756098
+    },
+    {
+     "land_type": "Industrial",
+     "n": 17,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "lewisham",
+   "name": "Lewisham",
+   "area_name": "Lewisham",
+   "kind": "borough",
+   "total_full": 1880,
+   "approved": 1345,
+   "rejected": 409,
+   "withdrawn": 50,
+   "undecided": 75,
+   "decided": 1754,
+   "approval_rate": 0.766819,
+   "rejection_rate": 0.233181,
+   "withdrawal_rate": 0.026596,
+   "ci_low": 0.746459,
+   "ci_high": 0.786012,
+   "reliable": true,
+   "median_days": 63.0,
+   "q1": 56.0,
+   "q3": 83.0,
+   "p90": 121.0,
+   "mean_days": 79.656214,
+   "in_time": 0.315849,
+   "median_approved": 62.0,
+   "median_rejected": 64.0,
+   "committee_share": 0.014269,
+   "median_days_committee": 210.0,
+   "median_days_delegated": 63.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 1737,
+     "approval_rate": 0.766264
+    },
+    {
+     "size": "Medium",
+     "n": 9,
+     "approval_rate": 0.888889
+    },
+    {
+     "size": "Large",
+     "n": 7,
+     "approval_rate": 0.714286
+    }
+   ],
+   "ranks": {
+    "approval_rate": 20.0,
+    "median_days": 13.0,
+    "in_time": 22.0,
+    "approved_dwellings": 24.0,
+    "approved_per_1000_people": 26.0,
+    "available_ha": 23.0,
+    "density_per_km2": 13.0
+   },
+   "geo_borough": "Lewisham",
+   "code": "E09000023",
+   "dwellings": {
+    "schemes": 16.0,
+    "proposed_dwellings": 634.0,
+    "approved_schemes": 5.0,
+    "approved_dwellings": 138.0,
+    "median_scheme_size": 26.5,
+    "largest_scheme": 210.0,
+    "share_of_london_approved": 0.004482,
+    "approved_per_km2": 3.922155,
+    "approved_per_1000_people": 0.458415
+   },
+   "land": {
+    "area_ha": 3518.47403,
+    "population": 301037,
+    "pop_year": 2025,
+    "density_per_km2": 8555.896604,
+    "brownfield_ha": 140.2,
+    "industrial_ha": 46.203168,
+    "greenfield_ha": 3.952279,
+    "green_belt_ha": 0.0,
+    "available_ha": 190.355446,
+    "brownfield_pct": 0.039847,
+    "industrial_pct": 0.013132,
+    "greenfield_pct": 0.001123,
+    "green_belt_pct": 0.0,
+    "available_pct": 0.054102,
+    "brownfield_sites": 213,
+    "brownfield_permissioned_share": 0.680751,
+    "brownfield_max_dwellings": 27306.0,
+    "register_updated": "2025-12-10"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 1723,
+     "approval_rate": 0.766106
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 20,
+     "approval_rate": 0.8
+    },
+    {
+     "land_type": "Industrial",
+     "n": 2,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "merton",
+   "name": "Merton",
+   "area_name": "Merton",
+   "kind": "borough",
+   "total_full": 3778,
+   "approved": 2800,
+   "rejected": 554,
+   "withdrawn": 167,
+   "undecided": 256,
+   "decided": 3354,
+   "approval_rate": 0.834824,
+   "rejection_rate": 0.165176,
+   "withdrawal_rate": 0.044203,
+   "ci_low": 0.821875,
+   "ci_high": 0.847007,
+   "reliable": true,
+   "median_days": 70.0,
+   "q1": 55.0,
+   "q3": 103.0,
+   "p90": 168.0,
+   "mean_days": 93.803898,
+   "in_time": 0.36042,
+   "median_approved": 70.0,
+   "median_rejected": 76.0,
+   "committee_share": 0.005677,
+   "median_days_committee": 306.0,
+   "median_days_delegated": 70.0,
+   "days_coverage": 0.994335,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 3290,
+     "approval_rate": 0.834347
+    },
+    {
+     "size": "Medium",
+     "n": 48,
+     "approval_rate": 0.875
+    },
+    {
+     "size": "Large",
+     "n": 16,
+     "approval_rate": 0.8125
+    }
+   ],
+   "ranks": {
+    "approval_rate": 11.0,
+    "median_days": 24.0,
+    "in_time": 17.0,
+    "approved_dwellings": 6.0,
+    "approved_per_1000_people": 4.0,
+    "available_ha": 22.0,
+    "density_per_km2": 19.0
+   },
+   "geo_borough": "Merton",
+   "code": "E09000024",
+   "dwellings": {
+    "schemes": 25.0,
+    "proposed_dwellings": 3660.0,
+    "approved_schemes": 10.0,
+    "approved_dwellings": 1801.0,
+    "median_scheme_size": 23.0,
+    "largest_scheme": 1570.0,
+    "share_of_london_approved": 0.058495,
+    "approved_per_km2": 47.867867,
+    "approved_per_1000_people": 8.227839
+   },
+   "land": {
+    "area_ha": 3762.440478,
+    "population": 218891,
+    "pop_year": 2025,
+    "density_per_km2": 5817.793033,
+    "brownfield_ha": 75.726275,
+    "industrial_ha": 143.050263,
+    "greenfield_ha": 18.400687,
+    "green_belt_ha": 0.0,
+    "available_ha": 237.177225,
+    "brownfield_pct": 0.020127,
+    "industrial_pct": 0.038021,
+    "greenfield_pct": 0.004891,
+    "green_belt_pct": 0.0,
+    "available_pct": 0.063038,
+    "brownfield_sites": 180,
+    "brownfield_permissioned_share": 0.722222,
+    "brownfield_max_dwellings": 6141.0,
+    "register_updated": "2024-12-02"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 3282,
+     "approval_rate": 0.836076
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 61,
+     "approval_rate": 0.770492
+    },
+    {
+     "land_type": "Industrial",
+     "n": 12,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "newham",
+   "name": "Newham",
+   "area_name": "Newham",
+   "kind": "borough",
+   "total_full": 1922,
+   "approved": 1221,
+   "rejected": 360,
+   "withdrawn": 63,
+   "undecided": 0,
+   "decided": 1581,
+   "approval_rate": 0.772296,
+   "rejection_rate": 0.227704,
+   "withdrawal_rate": 0.032778,
+   "ci_low": 0.750979,
+   "ci_high": 0.792293,
+   "reliable": true,
+   "median_days": 56.0,
+   "q1": 53.0,
+   "q3": 69.0,
+   "p90": 103.0,
+   "mean_days": 71.279924,
+   "in_time": 0.610513,
+   "median_approved": 56.0,
+   "median_rejected": 56.0,
+   "committee_share": 0.005799,
+   "median_days_committee": 175.0,
+   "median_days_delegated": 56.0,
+   "days_coverage": 0.998735,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 1579,
+     "approval_rate": 0.772008
+    },
+    {
+     "size": "Large",
+     "n": 2,
+     "approval_rate": 1.0
+    }
+   ],
+   "ranks": {
+    "approval_rate": 17.0,
+    "median_days": 2.0,
+    "in_time": 2.0,
+    "approved_dwellings": 16.0,
+    "approved_per_1000_people": 17.0,
+    "available_ha": 20.0,
+    "density_per_km2": 8.0
+   },
+   "geo_borough": "Newham",
+   "code": "E09000025",
+   "dwellings": {
+    "schemes": 16.0,
+    "proposed_dwellings": 2785.0,
+    "approved_schemes": 3.0,
+    "approved_dwellings": 456.0,
+    "median_scheme_size": 88.0,
+    "largest_scheme": 774.0,
+    "share_of_london_approved": 0.01481,
+    "approved_per_km2": 12.601065,
+    "approved_per_1000_people": 1.21102
+   },
+   "land": {
+    "area_ha": 3618.741633,
+    "population": 376542,
+    "pop_year": 2025,
+    "density_per_km2": 10405.329758,
+    "brownfield_ha": 18.83333,
+    "industrial_ha": 262.778731,
+    "greenfield_ha": 1.289415,
+    "green_belt_ha": 79.018473,
+    "available_ha": 282.901475,
+    "brownfield_pct": 0.005204,
+    "industrial_pct": 0.072616,
+    "greenfield_pct": 0.000356,
+    "green_belt_pct": 0.021836,
+    "available_pct": 0.078177,
+    "brownfield_sites": 108,
+    "brownfield_permissioned_share": 0.805556,
+    "brownfield_max_dwellings": 2507.0,
+    "register_updated": "2022-12-06"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 1590,
+     "approval_rate": 0.773585
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 13,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Industrial",
+     "n": 8,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "redbridge",
+   "name": "Redbridge",
+   "area_name": "Redbridge",
+   "kind": "borough",
+   "total_full": 3423,
+   "approved": 2629,
+   "rejected": 658,
+   "withdrawn": 99,
+   "undecided": 35,
+   "decided": 3287,
+   "approval_rate": 0.799817,
+   "rejection_rate": 0.200183,
+   "withdrawal_rate": 0.028922,
+   "ci_low": 0.785792,
+   "ci_high": 0.813143,
+   "reliable": true,
+   "median_days": 56.0,
+   "q1": 46.0,
+   "q3": 76.0,
+   "p90": 110.4,
+   "mean_days": 69.22087,
+   "in_time": 0.507454,
+   "median_approved": 56.0,
+   "median_rejected": 63.0,
+   "committee_share": 0.000304,
+   "median_days_committee": 72.0,
+   "median_days_delegated": 56.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 3069,
+     "approval_rate": 0.808407
+    },
+    {
+     "size": "Medium",
+     "n": 213,
+     "approval_rate": 0.676056
+    },
+    {
+     "size": "Large",
+     "n": 5,
+     "approval_rate": 0.8
+    }
+   ],
+   "ranks": {
+    "approval_rate": 13.0,
+    "median_days": 2.0,
+    "in_time": 5.0,
+    "approved_dwellings": 20.0,
+    "approved_per_1000_people": 23.0,
+    "available_ha": 7.0,
+    "density_per_km2": 20.0
+   },
+   "geo_borough": "Redbridge",
+   "code": "E09000026",
+   "dwellings": {
+    "schemes": 10.0,
+    "proposed_dwellings": 568.0,
+    "approved_schemes": 5.0,
+    "approved_dwellings": 235.0,
+    "median_scheme_size": 51.5,
+    "largest_scheme": 133.0,
+    "share_of_london_approved": 0.007633,
+    "approved_per_km2": 4.167938,
+    "approved_per_1000_people": 0.730201
+   },
+   "land": {
+    "area_ha": 5638.280131,
+    "population": 321829,
+    "pop_year": 2025,
+    "density_per_km2": 5707.928527,
+    "brownfield_ha": 128.17,
+    "industrial_ha": 60.587089,
+    "greenfield_ha": 539.421576,
+    "green_belt_ha": 1921.195798,
+    "available_ha": 728.178665,
+    "brownfield_pct": 0.022732,
+    "industrial_pct": 0.010746,
+    "greenfield_pct": 0.095671,
+    "green_belt_pct": 0.340741,
+    "available_pct": 0.129149,
+    "brownfield_sites": 188,
+    "brownfield_permissioned_share": 0.37234,
+    "brownfield_max_dwellings": 16.0,
+    "register_updated": "2025-11-24"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 3214,
+     "approval_rate": 0.799627
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 44,
+     "approval_rate": 0.840909
+    },
+    {
+     "land_type": "Industrial",
+     "n": 7,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "richmond-upon-thames",
+   "name": "Richmond upon Thames",
+   "area_name": "Richmond",
+   "kind": "borough",
+   "total_full": 2975,
+   "approved": 2212,
+   "rejected": 630,
+   "withdrawn": 82,
+   "undecided": 51,
+   "decided": 2842,
+   "approval_rate": 0.778325,
+   "rejection_rate": 0.221675,
+   "withdrawal_rate": 0.027563,
+   "ci_low": 0.762684,
+   "ci_high": 0.793215,
+   "reliable": true,
+   "median_days": 60.0,
+   "q1": 52.0,
+   "q3": 82.0,
+   "p90": 133.0,
+   "mean_days": 80.380718,
+   "in_time": 0.422238,
+   "median_approved": 59.0,
+   "median_rejected": 61.5,
+   "committee_share": 0.008472,
+   "median_days_committee": 290.5,
+   "median_days_delegated": 59.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 2584,
+     "approval_rate": 0.772833
+    },
+    {
+     "size": "Medium",
+     "n": 248,
+     "approval_rate": 0.830645
+    },
+    {
+     "size": "Large",
+     "n": 10,
+     "approval_rate": 0.9
+    }
+   ],
+   "ranks": {
+    "approval_rate": 16.0,
+    "median_days": 11.0,
+    "in_time": 10.0,
+    "approved_dwellings": 15.0,
+    "approved_per_1000_people": 10.0,
+    "available_ha": 25.0,
+    "density_per_km2": 29.0
+   },
+   "geo_borough": "Richmond upon Thames",
+   "code": "E09000027",
+   "dwellings": {
+    "schemes": 12.0,
+    "proposed_dwellings": 888.0,
+    "approved_schemes": 6.0,
+    "approved_dwellings": 632.0,
+    "median_scheme_size": 21.0,
+    "largest_scheme": 452.0,
+    "share_of_london_approved": 0.020527,
+    "approved_per_km2": 11.023467,
+    "approved_per_1000_people": 3.212802
+   },
+   "land": {
+    "area_ha": 5733.223678,
+    "population": 196713,
+    "pop_year": 2025,
+    "density_per_km2": 3431.106321,
+    "brownfield_ha": 28.778,
+    "industrial_ha": 19.494367,
+    "greenfield_ha": 87.871362,
+    "green_belt_ha": 134.213927,
+    "available_ha": 136.143728,
+    "brownfield_pct": 0.00502,
+    "industrial_pct": 0.0034,
+    "greenfield_pct": 0.015327,
+    "green_belt_pct": 0.02341,
+    "available_pct": 0.023746,
+    "brownfield_sites": 54,
+    "brownfield_permissioned_share": 0.592593,
+    "brownfield_max_dwellings": 2410.0,
+    "register_updated": "2025-12-15"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 2809,
+     "approval_rate": 0.779281
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 17,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Industrial",
+     "n": 8,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "southwark",
+   "name": "Southwark",
+   "area_name": "Southwark",
+   "kind": "borough",
+   "total_full": 1651,
+   "approved": 1220,
+   "rejected": 111,
+   "withdrawn": 43,
+   "undecided": 277,
+   "decided": 1331,
+   "approval_rate": 0.916604,
+   "rejection_rate": 0.083396,
+   "withdrawal_rate": 0.026045,
+   "ci_low": 0.900525,
+   "ci_high": 0.930286,
+   "reliable": true,
+   "median_days": 59.0,
+   "q1": 50.0,
+   "q3": 78.5,
+   "p90": 120.0,
+   "mean_days": 78.37115,
+   "in_time": 0.444778,
+   "median_approved": 58.0,
+   "median_rejected": 70.0,
+   "committee_share": 0.007645,
+   "median_days_committee": 214.5,
+   "median_days_delegated": 58.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 1275,
+     "approval_rate": 0.918431
+    },
+    {
+     "size": "Medium",
+     "n": 45,
+     "approval_rate": 0.844444
+    },
+    {
+     "size": "Large",
+     "n": 11,
+     "approval_rate": 1.0
+    }
+   ],
+   "ranks": {
+    "approval_rate": 3.0,
+    "median_days": 9.0,
+    "in_time": 9.0,
+    "approved_dwellings": 7.0,
+    "approved_per_1000_people": 9.0,
+    "available_ha": 16.0,
+    "density_per_km2": 7.0
+   },
+   "geo_borough": "Southwark",
+   "code": "E09000028",
+   "dwellings": {
+    "schemes": 18.0,
+    "proposed_dwellings": 2544.0,
+    "approved_schemes": 4.0,
+    "approved_dwellings": 1200.0,
+    "median_scheme_size": 46.0,
+    "largest_scheme": 800.0,
+    "share_of_london_approved": 0.038975,
+    "approved_per_km2": 41.593132,
+    "approved_per_1000_people": 3.841647
+   },
+   "land": {
+    "area_ha": 2885.091712,
+    "population": 312366,
+    "pop_year": 2025,
+    "density_per_km2": 10826.900187,
+    "brownfield_ha": 383.800674,
+    "industrial_ha": 70.575394,
+    "greenfield_ha": 1.974042,
+    "green_belt_ha": 0.0,
+    "available_ha": 456.35011,
+    "brownfield_pct": 0.133029,
+    "industrial_pct": 0.024462,
+    "greenfield_pct": 0.000684,
+    "green_belt_pct": 0.0,
+    "available_pct": 0.158175,
+    "brownfield_sites": 790,
+    "brownfield_permissioned_share": 0.522785,
+    "brownfield_max_dwellings": 9362.0,
+    "register_updated": "2020-03-25"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 1224,
+     "approval_rate": 0.922386
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 106,
+     "approval_rate": 0.849057
+    },
+    {
+     "land_type": "Industrial",
+     "n": 1,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "sutton",
+   "name": "Sutton",
+   "area_name": "Sutton",
+   "kind": "borough",
+   "total_full": 3235,
+   "approved": 2099,
+   "rejected": 574,
+   "withdrawn": 84,
+   "undecided": 478,
+   "decided": 2673,
+   "approval_rate": 0.78526,
+   "rejection_rate": 0.21474,
+   "withdrawal_rate": 0.025966,
+   "ci_low": 0.769289,
+   "ci_high": 0.800412,
+   "reliable": true,
+   "median_days": 66.0,
+   "q1": 56.0,
+   "q3": 89.0,
+   "p90": 126.0,
+   "mean_days": 82.056117,
+   "in_time": 0.30939,
+   "median_approved": 64.0,
+   "median_rejected": 73.0,
+   "committee_share": 0.013082,
+   "median_days_committee": 158.5,
+   "median_days_delegated": 65.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 2321,
+     "approval_rate": 0.768634
+    },
+    {
+     "size": "Medium",
+     "n": 338,
+     "approval_rate": 0.905325
+    },
+    {
+     "size": "Large",
+     "n": 14,
+     "approval_rate": 0.642857
+    }
+   ],
+   "ranks": {
+    "approval_rate": 15.0,
+    "median_days": 21.0,
+    "in_time": 23.0,
+    "approved_dwellings": 21.0,
+    "approved_per_1000_people": 19.0,
+    "available_ha": 15.0,
+    "density_per_km2": 23.0
+   },
+   "geo_borough": "Sutton",
+   "code": "E09000029",
+   "dwellings": {
+    "schemes": 37.0,
+    "proposed_dwellings": 2301.0,
+    "approved_schemes": 15.0,
+    "approved_dwellings": 211.0,
+    "median_scheme_size": 19.0,
+    "largest_scheme": 725.0,
+    "share_of_london_approved": 0.006853,
+    "approved_per_km2": 4.812041,
+    "approved_per_1000_people": 0.98611
+   },
+   "land": {
+    "area_ha": 4384.833964,
+    "population": 213972,
+    "pop_year": 2025,
+    "density_per_km2": 4879.819892,
+    "brownfield_ha": 47.99,
+    "industrial_ha": 168.767489,
+    "greenfield_ha": 248.647309,
+    "green_belt_ha": 604.599635,
+    "available_ha": 465.404798,
+    "brownfield_pct": 0.010945,
+    "industrial_pct": 0.038489,
+    "greenfield_pct": 0.056706,
+    "green_belt_pct": 0.137884,
+    "available_pct": 0.10614,
+    "brownfield_sites": 103,
+    "brownfield_permissioned_share": 0.466019,
+    "brownfield_max_dwellings": 6431.0,
+    "register_updated": "2017-12-31"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 2625,
+     "approval_rate": 0.787048
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 29,
+     "approval_rate": 0.655172
+    },
+    {
+     "land_type": "Industrial",
+     "n": 10,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 8,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "tower-hamlets",
+   "name": "Tower Hamlets",
+   "area_name": "Tower Hamlets",
+   "kind": "borough",
+   "total_full": 637,
+   "approved": 419,
+   "rejected": 168,
+   "withdrawn": 0,
+   "undecided": 47,
+   "decided": 587,
+   "approval_rate": 0.713799,
+   "rejection_rate": 0.286201,
+   "withdrawal_rate": 0.0,
+   "ci_low": 0.675937,
+   "ci_high": 0.748881,
+   "reliable": true,
+   "median_days": 56.0,
+   "q1": 54.0,
+   "q3": 90.0,
+   "p90": 188.8,
+   "mean_days": 95.296422,
+   "in_time": 0.58092,
+   "median_approved": 56.0,
+   "median_rejected": 56.0,
+   "committee_share": 0.020443,
+   "median_days_committee": 305.0,
+   "median_days_delegated": 56.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 561,
+     "approval_rate": 0.714795
+    },
+    {
+     "size": "Medium",
+     "n": 12,
+     "approval_rate": 0.833333
+    },
+    {
+     "size": "Large",
+     "n": 14,
+     "approval_rate": 0.571429
+    }
+   ],
+   "ranks": {
+    "approval_rate": 26.0,
+    "median_days": 2.0,
+    "in_time": 3.0,
+    "approved_dwellings": 12.0,
+    "approved_per_1000_people": 14.0,
+    "available_ha": 24.0,
+    "density_per_km2": 1.0
+   },
+   "geo_borough": "Tower Hamlets",
+   "code": "E09000030",
+   "dwellings": {
+    "schemes": 13.0,
+    "proposed_dwellings": 1895.0,
+    "approved_schemes": 6.0,
+    "approved_dwellings": 666.0,
+    "median_scheme_size": 72.0,
+    "largest_scheme": 457.0,
+    "share_of_london_approved": 0.021631,
+    "approved_per_km2": 33.691778,
+    "approved_per_1000_people": 1.99258
+   },
+   "land": {
+    "area_ha": 1976.743391,
+    "population": 334240,
+    "pop_year": 2025,
+    "density_per_km2": 16908.618565,
+    "brownfield_ha": 96.98,
+    "industrial_ha": 42.411489,
+    "greenfield_ha": 1.592646,
+    "green_belt_ha": 0.0,
+    "available_ha": 140.984135,
+    "brownfield_pct": 0.04906,
+    "industrial_pct": 0.021455,
+    "greenfield_pct": 0.000806,
+    "green_belt_pct": 0.0,
+    "available_pct": 0.071321,
+    "brownfield_sites": 27,
+    "brownfield_permissioned_share": 0.259259,
+    "brownfield_max_dwellings": 0.0,
+    "register_updated": "2017-11-30"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 579,
+     "approval_rate": 0.716753
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 8,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Industrial",
+     "n": 8,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "waltham-forest",
+   "name": "Waltham Forest",
+   "area_name": "Waltham Forest",
+   "kind": "borough",
+   "total_full": 2486,
+   "approved": 1437,
+   "rejected": 578,
+   "withdrawn": 137,
+   "undecided": 139,
+   "decided": 2015,
+   "approval_rate": 0.713151,
+   "rejection_rate": 0.286849,
+   "withdrawal_rate": 0.055109,
+   "ci_low": 0.693012,
+   "ci_high": 0.73248,
+   "reliable": true,
+   "median_days": 70.0,
+   "q1": 56.0,
+   "q3": 98.0,
+   "p90": 157.3,
+   "mean_days": 94.307876,
+   "in_time": 0.341289,
+   "median_approved": 69.5,
+   "median_rejected": 71.0,
+   "committee_share": 0.002786,
+   "median_days_committee": 159.5,
+   "median_days_delegated": 71.0,
+   "days_coverage": 0.415881,
+   "days_last_start": "2023-06",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 592,
+     "approval_rate": 0.712838
+    },
+    {
+     "size": "Medium",
+     "n": 260,
+     "approval_rate": 0.803846
+    },
+    {
+     "size": "Large",
+     "n": 3,
+     "approval_rate": 0.666667
+    }
+   ],
+   "ranks": {
+    "approval_rate": 27.0,
+    "median_days": 24.0,
+    "in_time": 19.0,
+    "approved_dwellings": 14.0,
+    "approved_per_1000_people": 12.0,
+    "available_ha": 19.0,
+    "density_per_km2": 15.0
+   },
+   "geo_borough": "Waltham Forest",
+   "code": "E09000031",
+   "dwellings": {
+    "schemes": 17.0,
+    "proposed_dwellings": 1445.0,
+    "approved_schemes": 2.0,
+    "approved_dwellings": 641.0,
+    "median_scheme_size": 46.0,
+    "largest_scheme": 617.0,
+    "share_of_london_approved": 0.020819,
+    "approved_per_km2": 16.506019,
+    "approved_per_1000_people": 2.259325
+   },
+   "land": {
+    "area_ha": 3883.431955,
+    "population": 283713,
+    "pop_year": 2025,
+    "density_per_km2": 7305.728626,
+    "brownfield_ha": 126.755204,
+    "industrial_ha": 97.586026,
+    "greenfield_ha": 77.669456,
+    "green_belt_ha": 842.62764,
+    "available_ha": 302.010686,
+    "brownfield_pct": 0.03264,
+    "industrial_pct": 0.025129,
+    "greenfield_pct": 0.02,
+    "green_belt_pct": 0.21698,
+    "available_pct": 0.077769,
+    "brownfield_sites": 183,
+    "brownfield_permissioned_share": 0.262295,
+    "brownfield_max_dwellings": 17687.0,
+    "register_updated": "2021-12-14"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 1937,
+     "approval_rate": 0.717605
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 14,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Industrial",
+     "n": 3,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "wandsworth",
+   "name": "Wandsworth",
+   "area_name": "Wandsworth",
+   "kind": "borough",
+   "total_full": 5582,
+   "approved": 4885,
+   "rejected": 343,
+   "withdrawn": 270,
+   "undecided": 77,
+   "decided": 5228,
+   "approval_rate": 0.934392,
+   "rejection_rate": 0.065608,
+   "withdrawal_rate": 0.04837,
+   "ci_low": 0.927356,
+   "ci_high": 0.94079,
+   "reliable": true,
+   "median_days": 70.0,
+   "q1": 56.0,
+   "q3": 102.0,
+   "p90": 169.0,
+   "mean_days": 96.84558,
+   "in_time": 0.318791,
+   "median_approved": 70.0,
+   "median_rejected": 78.0,
+   "committee_share": 0.020314,
+   "median_days_committee": 184.0,
+   "median_days_delegated": 69.0,
+   "days_coverage": 0.999617,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 4754,
+     "approval_rate": 0.929743
+    },
+    {
+     "size": "Medium",
+     "n": 140,
+     "approval_rate": 0.957143
+    },
+    {
+     "size": "Large",
+     "n": 334,
+     "approval_rate": 0.991018
+    }
+   ],
+   "ranks": {
+    "approval_rate": 2.0,
+    "median_days": 24.0,
+    "in_time": 21.0,
+    "approved_dwellings": 2.0,
+    "approved_per_1000_people": 1.0,
+    "available_ha": 18.0,
+    "density_per_km2": 10.0
+   },
+   "geo_borough": "Wandsworth",
+   "code": "E09000032",
+   "dwellings": {
+    "schemes": 22.0,
+    "proposed_dwellings": 6339.0,
+    "approved_schemes": 13.0,
+    "approved_dwellings": 5264.0,
+    "median_scheme_size": 97.0,
+    "largest_scheme": 2550.0,
+    "share_of_london_approved": 0.17097,
+    "approved_per_km2": 153.635383,
+    "approved_per_1000_people": 15.488776
+   },
+   "land": {
+    "area_ha": 3426.294052,
+    "population": 339859,
+    "pop_year": 2025,
+    "density_per_km2": 9919.142806,
+    "brownfield_ha": 252.64,
+    "industrial_ha": 62.945346,
+    "greenfield_ha": 0.37643,
+    "green_belt_ha": 0.0,
+    "available_ha": 315.961776,
+    "brownfield_pct": 0.073736,
+    "industrial_pct": 0.018371,
+    "greenfield_pct": 0.00011,
+    "green_belt_pct": 0.0,
+    "available_pct": 0.092217,
+    "brownfield_sites": 189,
+    "brownfield_permissioned_share": 0.62963,
+    "brownfield_max_dwellings": 29834.0,
+    "register_updated": "2025-12-15"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 4676,
+     "approval_rate": 0.930924
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 508,
+     "approval_rate": 0.966535
+    },
+    {
+     "land_type": "Industrial",
+     "n": 44,
+     "approval_rate": 0.931818
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "westminster",
+   "name": "Westminster",
+   "area_name": "Westminster",
+   "kind": "borough",
+   "total_full": 1087,
+   "approved": 476,
+   "rejected": 70,
+   "withdrawn": 60,
+   "undecided": 481,
+   "decided": 546,
+   "approval_rate": 0.871795,
+   "rejection_rate": 0.128205,
+   "withdrawal_rate": 0.055198,
+   "ci_low": 0.841132,
+   "ci_high": 0.897262,
+   "reliable": true,
+   "median_days": 82.5,
+   "q1": 58.0,
+   "q3": 137.75,
+   "p90": 227.0,
+   "mean_days": 116.652015,
+   "in_time": 0.230769,
+   "median_approved": 83.0,
+   "median_rejected": 77.0,
+   "committee_share": 0.042435,
+   "median_days_committee": 275.0,
+   "median_days_delegated": 81.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 516,
+     "approval_rate": 0.868217
+    },
+    {
+     "size": "Medium",
+     "n": 8,
+     "approval_rate": 0.875
+    },
+    {
+     "size": "Large",
+     "n": 22,
+     "approval_rate": 0.954545
+    }
+   ],
+   "ranks": {
+    "approval_rate": 5.0,
+    "median_days": 31.0,
+    "in_time": 31.0,
+    "approved_dwellings": 22.0,
+    "approved_per_1000_people": 21.0,
+    "available_ha": 27.0,
+    "density_per_km2": 11.0
+   },
+   "geo_borough": "Westminster",
+   "code": "E09000033",
+   "dwellings": {
+    "schemes": 17.0,
+    "proposed_dwellings": 417.0,
+    "approved_schemes": 6.0,
+    "approved_dwellings": 179.0,
+    "median_scheme_size": 19.0,
+    "largest_scheme": 53.0,
+    "share_of_london_approved": 0.005814,
+    "approved_per_km2": 8.34585,
+    "approved_per_1000_people": 0.84288
+   },
+   "land": {
+    "area_ha": 2144.77853,
+    "population": 212367,
+    "pop_year": 2025,
+    "density_per_km2": 9901.581773,
+    "brownfield_ha": 99.060677,
+    "industrial_ha": 4.501582,
+    "greenfield_ha": 0.0,
+    "green_belt_ha": 0.0,
+    "available_ha": 103.562259,
+    "brownfield_pct": 0.046187,
+    "industrial_pct": 0.002099,
+    "greenfield_pct": 0.0,
+    "green_belt_pct": 0.0,
+    "available_pct": 0.048286,
+    "brownfield_sites": 279,
+    "brownfield_permissioned_share": 0.741935,
+    "brownfield_max_dwellings": 0.0,
+    "register_updated": "2023-05-03"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 519,
+     "approval_rate": 0.865125
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 28,
+     "approval_rate": 1.0
+    },
+    {
+     "land_type": "Industrial",
+     "n": 1,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "city-of-london",
+   "name": "City of London",
+   "area_name": "City",
+   "kind": "other",
+   "total_full": 110,
+   "approved": 79,
+   "rejected": 0,
+   "withdrawn": 3,
+   "undecided": 28,
+   "decided": 79,
+   "approval_rate": 1.0,
+   "rejection_rate": 0.0,
+   "withdrawal_rate": 0.027273,
+   "ci_low": 0.953627,
+   "ci_high": 1.0,
+   "reliable": false,
+   "median_days": 157.0,
+   "q1": 88.5,
+   "q3": 265.5,
+   "p90": 427.8,
+   "mean_days": 199.164557,
+   "in_time": 0.113924,
+   "median_approved": 157.0,
+   "median_rejected": null,
+   "committee_share": 0.101266,
+   "median_days_committee": 369.5,
+   "median_days_delegated": 138.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-11",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 60,
+     "approval_rate": 1.0
+    },
+    {
+     "size": "Large",
+     "n": 19,
+     "approval_rate": 1.0
+    }
+   ],
+   "ranks": {
+    "approval_rate": null,
+    "median_days": null,
+    "in_time": null
+   },
+   "geo_borough": "City of London",
+   "code": "E09000001",
+   "dwellings": {
+    "schemes": 0.0,
+    "proposed_dwellings": 0.0,
+    "approved_schemes": 0.0,
+    "approved_dwellings": 0.0,
+    "median_scheme_size": null,
+    "largest_scheme": null,
+    "share_of_london_approved": 0.0,
+    "approved_per_km2": 0.0,
+    "approved_per_1000_people": 0.0
+   },
+   "land": {
+    "area_ha": 288.480421,
+    "population": 15631,
+    "pop_year": 2025,
+    "density_per_km2": 5418.391975,
+    "brownfield_ha": 0.22,
+    "industrial_ha": 0.388881,
+    "greenfield_ha": 0.0,
+    "green_belt_ha": 0.0,
+    "available_ha": 0.608881,
+    "brownfield_pct": 0.000763,
+    "industrial_pct": 0.001348,
+    "greenfield_pct": 0.0,
+    "green_belt_pct": 0.0,
+    "available_pct": 0.002111,
+    "brownfield_sites": 2,
+    "brownfield_permissioned_share": 1.0,
+    "brownfield_max_dwellings": 104.0,
+    "register_updated": "2017-12-31"
+   },
+   "by_land_type": [
+    {
+     "land_type": "Existing urban",
+     "n": 78,
+     "approval_rate": 1.0
+    },
+    {
+     "land_type": "Brownfield",
+     "n": 0,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Industrial",
+     "n": 0,
+     "approval_rate": null
+    },
+    {
+     "land_type": "Virgin / greenfield",
+     "n": 0,
+     "approval_rate": null
+    }
+   ]
+  },
+  {
+   "slug": "london-legacy-development-corporation",
+   "name": "London Legacy Development Corporation",
+   "area_name": "London Legacy",
+   "kind": "other",
+   "total_full": 58,
+   "approved": 42,
+   "rejected": 5,
+   "withdrawn": 6,
+   "undecided": 5,
+   "decided": 47,
+   "approval_rate": 0.893617,
+   "rejection_rate": 0.106383,
+   "withdrawal_rate": 0.103448,
+   "ci_low": 0.774055,
+   "ci_high": 0.953696,
+   "reliable": false,
+   "median_days": 120.0,
+   "q1": 61.0,
+   "q3": 224.5,
+   "p90": 419.8,
+   "mean_days": 176.489362,
+   "in_time": 0.212766,
+   "median_approved": 117.5,
+   "median_rejected": 381.0,
+   "committee_share": 0.162162,
+   "median_days_committee": 215.5,
+   "median_days_delegated": 113.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2024-08",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 11,
+     "approval_rate": 0.909091
+    },
+    {
+     "size": "Medium",
+     "n": 28,
+     "approval_rate": 0.928571
+    },
+    {
+     "size": "Large",
+     "n": 8,
+     "approval_rate": 0.75
+    }
+   ],
+   "ranks": {
+    "approval_rate": null,
+    "median_days": null,
+    "in_time": null
+   },
+   "geo_borough": null,
+   "code": null,
+   "dwellings": null,
+   "land": null,
+   "by_land_type": []
+  },
+  {
+   "slug": "old-oak-and-park-royal-development-corporation",
+   "name": "Old Oak and Park Royal Development Corporation",
+   "area_name": "Old Oak Park Royal",
+   "kind": "other",
+   "total_full": 34,
+   "approved": 25,
+   "rejected": 6,
+   "withdrawn": 0,
+   "undecided": 3,
+   "decided": 31,
+   "approval_rate": 0.806452,
+   "rejection_rate": 0.193548,
+   "withdrawal_rate": 0.0,
+   "ci_low": 0.637194,
+   "ci_high": 0.908131,
+   "reliable": false,
+   "median_days": 85.0,
+   "q1": 66.0,
+   "q3": 212.0,
+   "p90": 386.0,
+   "mean_days": 187.290323,
+   "in_time": 0.193548,
+   "median_approved": 85.0,
+   "median_rejected": 87.0,
+   "committee_share": 0.225806,
+   "median_days_committee": 386.0,
+   "median_days_delegated": 74.0,
+   "days_coverage": 1.0,
+   "days_last_start": "2025-12",
+   "by_size": [
+    {
+     "size": "Small",
+     "n": 21,
+     "approval_rate": 0.761905
+    },
+    {
+     "size": "Medium",
+     "n": 1,
+     "approval_rate": 1.0
+    },
+    {
+     "size": "Large",
+     "n": 9,
+     "approval_rate": 0.888889
+    }
+   ],
+   "ranks": {
+    "approval_rate": null,
+    "median_days": null,
+    "in_time": null
+   },
+   "geo_borough": null,
+   "code": null,
+   "dwellings": null,
+   "land": null,
+   "by_land_type": []
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+# Runtime dependencies for the API only (used by Vercel with root directory `backend`).
+# The data pipeline needs the full environment in the repo-root pyproject.toml.
+fastapi==0.141.1
+duckdb==1.5.5

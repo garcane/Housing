@@ -2,7 +2,7 @@
 
     uv run python -m backend.pipeline.build
 
-Reads the raw files in data/ and writes data/processed/:
+Reads the raw files in data/ and writes backend/data/ (committed, so the API deploys without the raw data):
   applications.parquet   full applications, cleaned, with land-type and Green Belt flags
   schemes.parquet        de-duplicated housing schemes (dwellings)
   brownfield.parquet     current London brownfield register sites
@@ -27,7 +27,7 @@ from .cleaning import (
 
 ROOT = Path(__file__).resolve().parents[2]
 RAW = ROOT / "data"
-OUT = RAW / "processed"
+OUT = ROOT / "backend" / "data"
 BNG = 27700  # British National Grid (metres), for areas and distances
 WGS84 = 4326
 

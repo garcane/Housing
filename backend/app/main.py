@@ -9,6 +9,7 @@ Serves the files written by `python -m backend.pipeline.build`. Aggregates that 
 import csv
 import io
 import json
+import tempfile
 import threading
 from pathlib import Path
 from typing import Literal
@@ -19,7 +20,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import FileResponse, StreamingResponse
 
-DATA = Path(__file__).resolve().parents[2] / "data" / "processed"
+# Kept inside backend/ so the API deploys on its own (e.g. a Vercel project with root directory `backend`).
+DATA = Path(__file__).resolve().parents[1] / "data"
 if not (DATA / "authorities.json").exists():
     raise RuntimeError("Processed data missing: run `uv run python -m backend.pipeline.build` first.")
 
@@ -28,7 +30,8 @@ _AUTH = json.loads((DATA / "authorities.json").read_text(encoding="utf-8"))
 N_RANKED = _AUTH["n_ranked"]
 AUTHORITIES = {a["slug"]: a for a in _AUTH["authorities"]}
 
-_db = duckdb.connect()
+# Serverless file systems are read-only apart from the temp dir, so point DuckDB's home there.
+_db = duckdb.connect(config={"home_directory": tempfile.gettempdir()})
 for view, file in [("apps", "applications"), ("schemes", "schemes"), ("brownfield", "brownfield")]:
     _db.execute(f"CREATE VIEW {view} AS SELECT * FROM read_parquet('{(DATA / file).as_posix()}.parquet')")
 _local = threading.local()
