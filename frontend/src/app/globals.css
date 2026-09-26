@@ -158,7 +158,7 @@ table.data tr.is-current td { background: #eef4fc; }
 table.data a { color: var(--ink); font-weight: 500; }
 
 /* ---------- Forms ---------- */
-.input, .select { height: 44px; padding: 0 16px; border: 1px solid var(--hairline); border-radius: var(--r-sm); background: var(--canvas); color: var(--ink); }
+.input, .select { max-width: 100%; height: 44px; padding: 0 16px; border: 1px solid var(--hairline); border-radius: var(--r-sm); background: var(--canvas); color: var(--ink); }
 .input:focus, .select:focus { outline: none; border-color: var(--info-border); box-shadow: 0 0 0 1px var(--info-border); }
 .field { display: flex; flex-direction: column; gap: 6px; }
 .field > span { font-size: 13px; font-weight: 500; color: var(--muted); }
@@ -210,14 +210,14 @@ table.data a { color: var(--ink); font-weight: 500; }
 @media (max-width: 1024px) {
   .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .split { grid-template-columns: 1fr; }
+  .split { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 768px) {
   :root { --gutter: 16px; --s-section: 56px; }
   .display-xl { font-size: 36px; }
   .display-lg { font-size: 30px; }
   .display-md { font-size: 26px; }
-  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: minmax(0, 1fr); }
   .card-coral, .card-forest, .card-dark, .cta-band { padding: var(--s-lg); }
   .nav-toggle { display: inline-grid; place-items: center; margin-left: auto; }
   .nav-links { display: none; }

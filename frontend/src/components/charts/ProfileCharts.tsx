@@ -29,7 +29,8 @@ export function OutcomeShareBar({ name, borough, london }: {
         marks: [
           Plot.barX(rows, Plot.stackX({ x: "share", y: "who", fill: "outcome", order: [...OUTCOMES], inset: 1, rx: 3,
             title: (d: Share) => `${d.who}\n${d.outcome}: ${pct(d.share, 1)} (${d.n.toLocaleString("en-GB")})` })),
-          Plot.text(rows.filter((d) => d.share > 0.09), Plot.stackX({ x: "share", y: "who", z: "outcome", order: [...OUTCOMES], text: (d: Share) => pct(d.share), fill: "#fff", fontWeight: 500 })),
+          // label only segments wide enough to hold the text
+          Plot.text(rows.filter((d) => d.share * (width - Math.min(150, width * 0.3)) > 40), Plot.stackX({ x: "share", y: "who", z: "outcome", order: [...OUTCOMES], text: (d: Share) => pct(d.share), fill: "#fff", fontWeight: 500 })),
           Plot.tip(rows, Plot.pointer(Plot.stackX({ x: "share", y: "who", z: "outcome", order: [...OUTCOMES],
             title: (d: Share) => `${d.who}\n${d.outcome}: ${pct(d.share, 1)} (${d.n.toLocaleString("en-GB")})` }))),
         ],

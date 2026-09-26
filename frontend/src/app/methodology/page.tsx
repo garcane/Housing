@@ -63,8 +63,8 @@ export default async function Methodology() {
             ))}
           </ul>
           <p>
-            Most of these boroughs rank among the fastest, which may partly be because of this gap: the medians are for 2022–23 applications and
-            don&apos;t include the later cohorts. The notebook&apos;s section 5 figures carry the same limitation.
+            This matters most for Barking &amp; Dagenham, which ranks as London&apos;s fastest borough on 2022–23 applications alone. Whether it
+            stayed that fast for later cohorts can&apos;t be seen in this data. The notebook&apos;s section 5 figures carry the same limitation.
           </p>
 
           <h2>Trends and right-censoring</h2>

@@ -26,7 +26,7 @@ export default function ApprovalCIChart({ rows, london, highlight }: { rows: Row
           marginRight: 16,
           style: PLOT_STYLE,
           x: { domain: [0.5, 1], tickFormat: (d: number) => pct(d), grid: true, label: "Approval rate (decided full applications) →" },
-          y: { domain: data.map((d) => d.label), label: null, tickSize: 0 },
+          y: { domain: data.map((d) => d.label), label: null, tickSize: 0, tickFormat: (d: string) => (width < 480 && d.length > 15 ? `${d.slice(0, 14)}…` : d) },
           marks: [
             Plot.ruleX([london], { stroke: C.ink, strokeWidth: 1 }),
             Plot.text([london], { x: (d: number) => d, frameAnchor: "top", dy: -14, text: () => `London ${pct(london)}`, fill: C.ink, textAnchor: "start", dx: 4 }),
