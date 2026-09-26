@@ -20,5 +20,6 @@ dependencies = [
     "polars>=1.44.2",
     "pyarrow>=25.0.1",
     "pydeck>=0.9.3",
+    "scikit-learn>=1.9.1",
     "seaborn>=0.13.2",
 ]
