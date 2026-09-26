@@ -113,6 +113,12 @@ export default async function Home() {
                 </ul>
               </div>
             </div>
+            {london.timing_gaps.length > 0 && (
+              <p className="notice" style={{ margin: 0 }}>
+                {london.timing_gaps.map((g) => shortName(g.name)).join(", ")} stop publishing decision times for applications started after mid-2023,
+                so their medians reflect 2022–23 applications only. <Link href="/methodology#timing-gaps">Details</Link>
+              </p>
+            )}
           </div>
         </div>
       </section>

@@ -191,6 +191,8 @@ def main():
         brownfield_max_dwellings=("maximum-net-dwellings", "sum"), register_updated=("entry-date", "max"))
     land = land.join(blr_perm)
     land = land.join(dwell)
+    counts = ["schemes", "proposed_dwellings", "approved_schemes", "approved_dwellings", "share_of_london_approved"]
+    land[counts] = land[counts].fillna(0)
     land["approved_per_km2"] = land["approved_dwellings"] / (land["area_ha"] / 100)
     land["approved_per_1000_people"] = land["approved_dwellings"] / land["population"] * 1000
     log("land aggregates done")
@@ -231,6 +233,10 @@ def main():
     time_a["committee_share"] = known.groupby("area_name")["route"].apply(lambda s: (s == "Committee").mean())
     time_a["median_days_committee"] = valid[valid["route"] == "Committee"].groupby("area_name")["days"].median()
     time_a["median_days_delegated"] = valid[valid["route"] == "Delegated"].groupby("area_name")["days"].median()
+    # Some portals stop publishing decision dates part-way through the period; record how much of the
+    # timing data exists so the UI can flag medians that only describe the earlier years.
+    time_a["days_coverage"] = dec.groupby("area_name")["days"].apply(lambda s: s.notna().mean())
+    time_a["days_last_start"] = valid.groupby("area_name")["start_date"].max().dt.strftime("%Y-%m")
     auth = auth.join(time_a)
 
     boro_rows = auth.index[~auth.index.isin(OTHER_AUTHORITIES)]
@@ -354,6 +360,9 @@ def main():
                 | {"brownfield_sites": int(len(blr)), "density_per_km2":
                    land_b32["population"].sum() / (land_b32["area_ha"].sum() / 100),
                    "pop_year": str(pop["pop_year"].iloc[0])},
+        "timing_gaps": [{"name": display_name(k), "slug": slugify(display_name(k)), "coverage": r["days_coverage"],
+                         "last_start": r["days_last_start"]}
+                        for k, r in b_only.iterrows() if r["days_coverage"] < 0.8],
         "means": {  # borough-level means, for "vs London" comparisons of per-borough ratios
             "approved_per_1000_people": land_b32["approved_per_1000_people"].mean(),
             "available_pct": land_b32["available_pct"].mean(),

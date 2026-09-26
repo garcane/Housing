@@ -75,7 +75,7 @@ export default function CompareView({ authorities, slots, details, london }: {
     yaxis: { tickformat: fmt },
     xaxis: { type: "category" as const },
     shapes: [{ type: "rect" as const, xref: "x" as const, yref: "paper" as const, x0: "2025Q1", x1: "2025Q4", y0: 0, y1: 1, fillcolor: C.censored, line: { width: 0 }, layer: "below" as const }],
-    legend: { orientation: "h" as const, y: -0.25 },
+    showlegend: false, // the figure legend above the chart already names each series
   });
   const approvalLayout = useMemo(() => censoredLayout(".0%"), []);
   const daysLayout = useMemo(() => censoredLayout(), []);

@@ -52,6 +52,21 @@ export default async function Methodology() {
             <li><b>Decision route</b> collapses about 200 free-text <code>decided_by</code> values into Committee, Delegated and Other. The route is missing for about a quarter of decisions, so the committee share is under-counted.</li>
           </ul>
 
+          <h2 id="timing-gaps">Gaps in decision-time data</h2>
+          <p>
+            Some boroughs&apos; records stop giving a decision time part-way through the period. Their approval and refusal counts are
+            complete, but their timing measures (median days, share in time, trends) only describe the applications that have a time recorded:
+          </p>
+          <ul>
+            {l.timing_gaps.map((g) => (
+              <li key={g.slug}><b>{g.name}</b>: {pct(g.coverage)} of decided applications have a decision time; the latest was for an application started in {g.last_start}.</li>
+            ))}
+          </ul>
+          <p>
+            Most of these boroughs rank among the fastest, which may partly be because of this gap: the medians are for 2022–23 applications and
+            don&apos;t include the later cohorts. The notebook&apos;s section 5 figures carry the same limitation.
+          </p>
+
           <h2>Trends and right-censoring</h2>
           <p>
             Trends group applications by the quarter they <i>started</i>. Recent cohorts are right-censored: slow applications that are still undecided

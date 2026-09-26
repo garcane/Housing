@@ -32,7 +32,7 @@ export type AuthoritySummary = {
 export type Dwellings = {
   schemes: number; proposed_dwellings: number; approved_schemes: number; approved_dwellings: number;
   median_scheme_size: number | null; largest_scheme: number | null; share_of_london_approved: number | null;
-  approved_per_km2: number; approved_per_1000_people: number;
+  approved_per_km2: number | null; approved_per_1000_people: number | null;
 };
 
 export type Land = {
@@ -50,6 +50,8 @@ export type Authority = {
   median_days: number | null; q1: number | null; q3: number | null; p90: number | null; mean_days: number | null;
   in_time: number | null; median_approved: number | null; median_rejected: number | null;
   committee_share: number | null; median_days_committee: number | null; median_days_delegated: number | null;
+  /** share of decided applications with a decision time; last start month that has one */
+  days_coverage: number | null; days_last_start: string | null;
   by_size: { size: string; n: number; approval_rate: number }[];
   by_land_type: { land_type: string; n: number; approval_rate: number | null }[];
   ranks: Ranks;
@@ -77,6 +79,7 @@ export type London = {
   dwellings: { schemes: number; proposed: number; approved: number; top5_share: number };
   land: { area_ha: number; population: number; brownfield_ha: number; industrial_ha: number; greenfield_ha: number;
     green_belt_ha: number; available_ha: number; brownfield_sites: number; density_per_km2: number; pop_year: string };
+  timing_gaps: { name: string; slug: string; coverage: number; last_start: string }[];
   means: { approved_per_1000_people: number; available_pct: number; committee_share: number };
 };
 

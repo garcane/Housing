@@ -9,7 +9,7 @@ import { HomesMap, LandMap } from "@/components/map/ProfileMaps";
 import Figure, { Key } from "@/components/viz/Figure";
 import { C, LAND_COLORS } from "@/components/viz/colors";
 import { api, ApiError, type Authority, type AuthoritySummary, type London } from "@/lib/api";
-import { days, ha, num, ordinal, pct, pts, shortName } from "@/lib/format";
+import { ha, num, ordinal, pct, pts, shortName } from "@/lib/format";
 
 type Resp = { n_ranked: number; authority: Authority; london: London };
 
@@ -38,6 +38,7 @@ export default async function BoroughPage({ params }: PageProps<"/borough/[slug]
   const isOther = a.kind === "other";
   const lApproved = Math.round(london.approval_rate * london.counts.decided);
   const L = london.land;
+  const timingGap = a.days_coverage != null && a.days_coverage < 0.8;
 
   return (
     <>
@@ -73,7 +74,7 @@ export default async function BoroughPage({ params }: PageProps<"/borough/[slug]
           <div className="grid-4" style={{ paddingTop: 16 }}>
             <Tile value={pct(a.approval_rate, 1)} label="Approval rate" sub={`${pts(a.approval_rate, london.approval_rate)} vs London · 95% CI ${pct(a.ci_low)}–${pct(a.ci_high)}`} />
             <Tile value={a.median_days == null ? "–" : `${a.median_days}`} label="Median days to decision"
-              sub={a.median_days == null ? "" : `${a.median_days - london.median_days >= 0 ? "+" : "−"}${Math.abs(a.median_days - london.median_days)} days vs London (${london.median_days})`} />
+              sub={a.median_days == null ? "" : `${a.median_days - london.median_days >= 0 ? "+" : "−"}${Math.abs(a.median_days - london.median_days)} days vs London (${london.median_days})${timingGap ? ` · data only to ${a.days_last_start}` : ""}`} />
             <Tile value={pct(a.in_time)} label="Decided within the statutory period" sub={`London ${pct(london.in_time)}`} />
             <Tile value={a.dwellings ? num(a.dwellings.approved_dwellings) : "–"} label="Dwellings approved"
               sub={a.dwellings ? `of ${num(a.dwellings.proposed_dwellings)} proposed · ${pct(a.dwellings.share_of_london_approved, 1)} of London` : "See host boroughs"} />
@@ -131,6 +132,12 @@ export default async function BoroughPage({ params }: PageProps<"/borough/[slug]
               and one in ten took more than {a.p90 != null ? Math.round(a.p90) : "–"} days.
             </p>
           </div>
+          {timingGap && (
+            <p className="notice">
+              {a.name}&apos;s records stop giving decision times for applications started after {a.days_last_start}. Only {pct(a.days_coverage)} of
+              decided applications have one, so the timing figures here describe the earlier applications and aren&apos;t directly comparable with other boroughs.
+            </p>
+          )}
           <div className="grid-4">
             <div className="card"><Tile value={`${a.median_approved ?? "–"} / ${a.median_rejected ?? "–"}`} label="Median days: approved / refused" /></div>
             <div className="card"><Tile value={pct(a.committee_share)} label="Decided at committee" sub={`London average ${pct(london.means.committee_share)} · where route is recorded`} /></div>
@@ -152,7 +159,7 @@ export default async function BoroughPage({ params }: PageProps<"/borough/[slug]
                 <div className="eyebrow" style={{ color: "rgba(255,255,255,.7)" }}>Homes</div>
                 <h2 className="display-md">{num(a.dwellings.approved_dwellings)} homes approved across {num(a.dwellings.approved_schemes)} schemes</h2>
                 <p className="muted" style={{ fontSize: 16, margin: 0 }}>
-                  That is {a.dwellings.approved_per_1000_people.toFixed(1)} per 1,000 residents (borough average {london.means.approved_per_1000_people.toFixed(1)}).
+                  That is {a.dwellings.approved_per_1000_people?.toFixed(1) ?? "–"} per 1,000 residents (borough average {london.means.approved_per_1000_people.toFixed(1)}).
                   Only larger schemes publish a dwelling count, and repeat submissions for the same scheme are counted once.
                 </p>
               </div>

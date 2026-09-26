@@ -29,8 +29,8 @@ export function OutcomeShareBar({ name, borough, london }: {
         marks: [
           Plot.barX(rows, Plot.stackX({ x: "share", y: "who", fill: "outcome", order: [...OUTCOMES], inset: 1, rx: 3,
             title: (d: Share) => `${d.who}\n${d.outcome}: ${pct(d.share, 1)} (${d.n.toLocaleString("en-GB")})` })),
-          Plot.text(rows.filter((d) => d.share > 0.09), Plot.stackX({ x: "share", y: "who", order: [...OUTCOMES], text: (d: Share) => pct(d.share), fill: "#fff", fontWeight: 500 })),
-          Plot.tip(rows, Plot.pointer(Plot.stackX({ x: "share", y: "who", order: [...OUTCOMES],
+          Plot.text(rows.filter((d) => d.share > 0.09), Plot.stackX({ x: "share", y: "who", z: "outcome", order: [...OUTCOMES], text: (d: Share) => pct(d.share), fill: "#fff", fontWeight: 500 })),
+          Plot.tip(rows, Plot.pointer(Plot.stackX({ x: "share", y: "who", z: "outcome", order: [...OUTCOMES],
             title: (d: Share) => `${d.who}\n${d.outcome}: ${pct(d.share, 1)} (${d.n.toLocaleString("en-GB")})` }))),
         ],
       })}
@@ -56,7 +56,7 @@ export function SizeCompare({ borough, london }: {
       deps={[borough, london]}
       minHeight={170}
       render={(width) => Plot.plot({
-        width, height: 170, marginLeft: 70, marginRight: 60, style: PLOT_STYLE,
+        width, height: 170, marginLeft: 70, marginRight: 80, style: PLOT_STYLE,
         x: { domain: [0.4, 1], tickFormat: (d: number) => pct(d), grid: true, label: "Approval rate →" },
         y: { domain: sizes, label: null, tickSize: 0 },
         marks: [
@@ -64,7 +64,8 @@ export function SizeCompare({ borough, london }: {
             .filter((d) => d.a != null && d.l != null), { y1: "s", y2: "s", x1: "l", x2: "a", stroke: C.grid, strokeWidth: 3 }),
           Plot.tickX(london, { y: "size", x: "approval_rate", stroke: C.london, strokeWidth: 2.5 }),
           Plot.dot(b, { y: "size", x: "approval_rate", r: 6, fill: C.approved, stroke: "#fff", strokeWidth: 1.5 }),
-          Plot.text(b, { y: "size", x: "approval_rate", text: (d: { n: number }) => `n = ${d.n.toLocaleString("en-GB")}`, dx: 12, textAnchor: "start", fill: C.ink2, frameAnchor: "right" }),
+          // decision counts in a column right of the plot, clear of the marks
+          Plot.text(b, { y: "size", x: 1, text: (d: { n: number }) => `n = ${d.n.toLocaleString("en-GB")}`, dx: 10, textAnchor: "start", fill: C.ink2 }),
           Plot.tip(b, Plot.pointerY({ y: "size", x: "approval_rate", title: (d: { size: string; n: number; approval_rate: number }) =>
             `${d.size}: ${pct(d.approval_rate, 1)} (${d.n.toLocaleString("en-GB")} decided)\nLondon: ${pct(london.find((l) => l.size === d.size)?.approval_rate, 1)}` })),
         ],
@@ -97,7 +98,7 @@ export function LandShareBar({ name, borough, london }: {
         color: { domain: types.map(([t]) => t), range: types.map(([t]) => LAND_COLORS[t]) },
         marks: [
           Plot.barX(rows, Plot.stackX({ x: "share", y: "who", fill: "type", inset: 1, rx: 3 })),
-          Plot.tip(rows, Plot.pointer(Plot.stackX({ x: "share", y: "who", title: (d: { who: string; type: string; share: number }) => `${d.who}\n${d.type}: ${pct(d.share, 1)} of area` }))),
+          Plot.tip(rows, Plot.pointer(Plot.stackX({ x: "share", y: "who", z: "type", title: (d: { who: string; type: string; share: number }) => `${d.who}\n${d.type}: ${pct(d.share, 1)} of area` }))),
         ],
       })}
     />

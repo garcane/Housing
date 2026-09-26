@@ -2,7 +2,7 @@
 
 import { MapboxOverlay } from "@deck.gl/mapbox";
 import type { Layer, PickingInfo } from "@deck.gl/core";
-import maplibregl, { type LngLatBoundsLike, type StyleSpecification } from "maplibre-gl";
+import { Map as MapLibre, NavigationControl, setWorkerUrl, type LngLatBoundsLike, type StyleSpecification } from "maplibre-gl";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 type Feature = { type: "Feature"; properties: { slug: string; name: string; code: string }; geometry: { type: string; coordinates: unknown } };
@@ -11,22 +11,15 @@ type FC = { type: "FeatureCollection"; features: Feature[] };
 let boroughsCache: Promise<FC> | null = null;
 const loadBoroughs = () => (boroughsCache ??= fetch("/api/geo/boroughs").then((r) => r.json()));
 
-// Blank canvas + a light raster basemap. If the tiles can't load the map still works: the
-// borough polygons and data layers don't depend on them.
+// Served from /public by scripts/copy-maplibre-worker.mjs (the bundler can't resolve MapLibre's own worker URL).
+if (typeof window !== "undefined") setWorkerUrl("/maplibre/maplibre-gl-worker.mjs");
+
+// No tile basemap: the borough polygons are the base layer (as in the notebook's maps), so there's no
+// API key or tile server to depend on.
 const STYLE: StyleSpecification = {
   version: 8,
-  sources: {
-    carto: {
-      type: "raster",
-      tiles: ["https://a.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png", "https://b.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png"],
-      tileSize: 256,
-      attribution: "© OpenStreetMap contributors © CARTO",
-    },
-  },
-  layers: [
-    { id: "bg", type: "background", paint: { "background-color": "#f8fafc" } },
-    { id: "carto", type: "raster", source: "carto", paint: { "raster-opacity": 0.6 } },
-  ],
+  sources: {},
+  layers: [{ id: "bg", type: "background", paint: { "background-color": "#f8fafc" } }],
 };
 
 const LONDON_BOUNDS: LngLatBoundsLike = [[-0.52, 51.28], [0.34, 51.7]];
@@ -71,34 +64,36 @@ export default function LondonMap({
   ariaLabel: string;
 }) {
   const el = useRef<HTMLDivElement>(null);
-  const map = useRef<maplibregl.Map | null>(null);
+  const map = useRef<MapLibre | null>(null);
   const deck = useRef<MapboxOverlay | null>(null);
   const [ready, setReady] = useState(false);
   const [features, setFeatures] = useState<FC | null>(null);
   const [tip, setTip] = useState<{ x: number; y: number; content: ReactNode } | null>(null);
   const handlers = useRef({ onSelect, boroughTooltip, deckTooltip });
-  handlers.current = { onSelect, boroughTooltip, deckTooltip };
+  useEffect(() => {
+    handlers.current = { onSelect, boroughTooltip, deckTooltip };
+  });
 
   // --- init
   useEffect(() => {
     if (!el.current) return;
-    const m = new maplibregl.Map({
+    const m = new MapLibre({
       container: el.current,
       style: STYLE,
       bounds: LONDON_BOUNDS,
       fitBoundsOptions: { padding: 16 },
-      attributionControl: { compact: true },
+      attributionControl: { compact: true, customAttribution: "Boundaries © ONS" },
       canvasContextAttributes: { preserveDrawingBuffer: true }, // lets the PNG export read the canvas
       dragRotate: false,
       pitchWithRotate: false,
       cooperativeGestures: false,
     });
-    m.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
+    m.addControl(new NavigationControl({ showCompass: false }), "top-right");
     m.scrollZoom.disable(); // don't hijack page scroll; zoom with the buttons or ctrl + scroll
     m.getCanvas().addEventListener("wheel", (e) => { if (e.ctrlKey) m.scrollZoom.enable(); else m.scrollZoom.disable(); });
 
     const overlay = new MapboxOverlay({
-      interleaved: true,
+      interleaved: false, // interleaved rendering reads MapLibre internals that changed in v6
       layers: [],
       onHover: (info) => {
         const c = handlers.current.deckTooltip?.(info);
@@ -113,8 +108,8 @@ export default function LondonMap({
       const fc = await loadBoroughs();
       m.addSource("boroughs", { type: "geojson", data: fc, promoteId: "slug" });
       m.addLayer({ id: "b-fill", type: "fill", source: "boroughs",
-        paint: { "fill-color": ["coalesce", ["feature-state", "fill"], "#ffffff"], "fill-opacity": ["case", ["boolean", ["feature-state", "hasFill"], false], 0.88, 0.35] } });
-      m.addLayer({ id: "b-line", type: "line", source: "boroughs", paint: { "line-color": "#ffffff", "line-width": 1.2 } });
+        paint: { "fill-color": ["coalesce", ["feature-state", "fill"], "#ffffff"], "fill-opacity": ["case", ["boolean", ["feature-state", "hasFill"], false], 0.9, 1] } });
+      m.addLayer({ id: "b-line", type: "line", source: "boroughs", paint: { "line-color": ["case", ["boolean", ["feature-state", "hasFill"], false], "#ffffff", "#c9ccd1"], "line-width": 1.2 } });
       m.addLayer({ id: "b-hover", type: "line", source: "boroughs",
         paint: { "line-color": "#181d26", "line-width": ["case", ["boolean", ["feature-state", "hover"], false], 1.6, 0] } });
       m.addLayer({ id: "b-highlight", type: "line", source: "boroughs", filter: ["==", ["get", "slug"], ""],
