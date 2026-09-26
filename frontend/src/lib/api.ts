@@ -79,7 +79,8 @@ export type London = {
   dwellings: { schemes: number; proposed: number; approved: number; top5_share: number };
   land: { area_ha: number; population: number; brownfield_ha: number; industrial_ha: number; greenfield_ha: number;
     green_belt_ha: number; available_ha: number; brownfield_sites: number; density_per_km2: number; pop_year: string };
-  timing_gaps: { name: string; slug: string; coverage: number; last_start: string }[];
+  /** absent in data built before this field existed */
+  timing_gaps?: { name: string; slug: string; coverage: number; last_start: string }[];
   means: { approved_per_1000_people: number; available_pct: number; committee_share: number };
 };
 

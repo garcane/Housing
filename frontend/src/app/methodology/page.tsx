@@ -59,7 +59,7 @@ export default async function Methodology() {
             complete, but their timing measures (median days, share in time, trends) only describe the applications that have a time recorded:
           </p>
           <ul>
-            {l.timing_gaps.map((g) => (
+            {(l.timing_gaps ?? []).map((g) => (
               <li key={g.slug}><b>{g.name}</b>: {pct(g.coverage)} of decided applications have a decision time; the latest was for an application started in {g.last_start}.</li>
             ))}
           </ul>
