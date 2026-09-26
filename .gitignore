@@ -8,3 +8,10 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Large raw inputs (download them; see README) and pipeline output (rebuild with backend.pipeline.build)
+data/housing.csv
+data/green_belt_england.geojson
+data/brownfield_land_register.csv
+data/osm_landuse_london.gpkg
+data/processed/

@@ -10,6 +10,20 @@ backend/app/          FastAPI + DuckDB API
 frontend/             Next.js app (MapLibre + deck.gl maps, Observable Plot + Plotly charts)
 ```
 
+## Getting the data
+
+The large inputs aren't in git (`housing.csv` alone is over GitHub's 100 MB limit). Put these files in `data/`:
+
+| File | Source |
+|---|---|
+| `housing.csv` | London planning applications 2022–2025 (PlanIt-style export) |
+| `brownfield_land_register.csv` | [planning.data.gov.uk – brownfield land](https://www.planning.data.gov.uk/dataset/brownfield-land) (CSV download) |
+| `green_belt_england.geojson` | [planning.data.gov.uk – Green Belt](https://www.planning.data.gov.uk/dataset/green-belt) (GeoJSON download) |
+| `osm_landuse_london.gpkg` | Created by the notebook (section 10) via OSMnx if it's missing |
+| `london_boroughs.geojson`, `population_boroughs.csv` | Included in the repo (ONS boundaries; Nomis mid-year population) |
+
+`data/processed/` is generated: run the pipeline below.
+
 ## Run it locally
 
 Needs Python 3.13 with [uv](https://docs.astral.sh/uv/), and Node 20+.
